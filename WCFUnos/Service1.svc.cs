@@ -136,5 +136,190 @@ namespace WCFUnos
                 finally { con.Close(); }
             }
         }
+
+
+        public DataSet PrikaziBolnice()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_bolnica", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+                    
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziOdeljenja()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_odeljenje", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziDijagnoze()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_dijagnoza", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            } throw new NotImplementedException();
+        }
+
+        public DataSet PrikaziOperacije()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_operacije", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziDrzave()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_drzava", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziOpstine()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_opstina", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziOtpust()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_vrsta_otpusta", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziPol()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_pol", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
     }
 }

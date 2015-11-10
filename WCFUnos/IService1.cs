@@ -26,7 +26,29 @@ namespace WCFUnos
         [OperationContract]
         void IzmeniPacijenta(Pacijent pacijentInfo);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        DataSet PrikaziBolnice();
+
+        [OperationContract]
+        DataSet PrikaziOdeljenja();
+
+        [OperationContract]
+        DataSet PrikaziDijagnoze();
+
+        [OperationContract]
+        DataSet PrikaziOperacije();
+
+        [OperationContract]
+        DataSet PrikaziDrzave();
+
+        [OperationContract]
+        DataSet PrikaziOpstine();
+
+        [OperationContract]
+        DataSet PrikaziOtpust();
+
+        [OperationContract]
+        DataSet PrikaziPol();
     }
 
 
