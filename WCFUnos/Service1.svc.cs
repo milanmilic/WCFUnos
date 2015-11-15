@@ -145,7 +145,7 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_bolnica", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_bolnica WHERE id < 91 ORDER BY naziv ASC", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -161,14 +161,14 @@ namespace WCFUnos
             }
         }
 
-        public DataSet PrikaziOdeljenja()
+        public DataSet PrikaziOdeljenjaPrijem()
         {
             using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_odeljenje", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_odeljenje ORDER BY naziv ASC", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -184,14 +184,106 @@ namespace WCFUnos
             }
         }
 
-        public DataSet PrikaziDijagnoze()
+        public DataSet PrikaziOdeljenjaOtpust()
         {
             using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_dijagnoza", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_odeljenje ORDER BY naziv ASC", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            }
+        }
+
+        public DataSet PrikaziDijagnozeOsnovna()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            } throw new NotImplementedException();
+        }
+
+        public DataSet PrikaziDijagnozeUputna()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            } throw new NotImplementedException();
+        }
+
+        public DataSet PrikaziDijagnozePrateca()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            } throw new NotImplementedException();
+        }
+
+        public DataSet PrikaziDijagnozeSmrt()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -214,7 +306,7 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_operacije", con);
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 id, naziv FROM i_operacije ORDER BY naziv ASC", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -306,7 +398,7 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_pol", con);
+                    SqlCommand cmd = new SqlCommand("SELECT id, naziv FROM i_pol", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);

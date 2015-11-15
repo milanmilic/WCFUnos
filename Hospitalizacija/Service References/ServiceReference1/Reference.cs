@@ -245,6 +245,78 @@ namespace Hospitalizacija.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzmeniPacijenta", ReplyAction="http://tempuri.org/IService1/IzmeniPacijentaResponse")]
         System.Threading.Tasks.Task IzmeniPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziBolnice", ReplyAction="http://tempuri.org/IService1/PrikaziBolniceResponse")]
+        System.Data.DataSet PrikaziBolnice();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziBolnice", ReplyAction="http://tempuri.org/IService1/PrikaziBolniceResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziBolniceAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOdeljenjaPrijem", ReplyAction="http://tempuri.org/IService1/PrikaziOdeljenjaPrijemResponse")]
+        System.Data.DataSet PrikaziOdeljenjaPrijem();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOdeljenjaPrijem", ReplyAction="http://tempuri.org/IService1/PrikaziOdeljenjaPrijemResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOdeljenjaPrijemAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust", ReplyAction="http://tempuri.org/IService1/PrikaziOdeljenjaOtpustResponse")]
+        System.Data.DataSet PrikaziOdeljenjaOtpust();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust", ReplyAction="http://tempuri.org/IService1/PrikaziOdeljenjaOtpustResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOdeljenjaOtpustAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovna", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeOsnovnaResponse")]
+        System.Data.DataSet PrikaziDijagnozeOsnovna();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovna", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeOsnovnaResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeOsnovnaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeUputna", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeUputnaResponse")]
+        System.Data.DataSet PrikaziDijagnozeUputna();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeUputna", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeUputnaResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeUputnaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozePrateca", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozePratecaResponse")]
+        System.Data.DataSet PrikaziDijagnozePrateca();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozePrateca", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozePratecaResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozePratecaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeSmrt", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeSmrtResponse")]
+        System.Data.DataSet PrikaziDijagnozeSmrt();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeSmrt", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeSmrtResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeSmrtAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOperacije", ReplyAction="http://tempuri.org/IService1/PrikaziOperacijeResponse")]
+        System.Data.DataSet PrikaziOperacije();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOperacije", ReplyAction="http://tempuri.org/IService1/PrikaziOperacijeResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOperacijeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDrzave", ReplyAction="http://tempuri.org/IService1/PrikaziDrzaveResponse")]
+        System.Data.DataSet PrikaziDrzave();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDrzave", ReplyAction="http://tempuri.org/IService1/PrikaziDrzaveResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDrzaveAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOpstine", ReplyAction="http://tempuri.org/IService1/PrikaziOpstineResponse")]
+        System.Data.DataSet PrikaziOpstine();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOpstine", ReplyAction="http://tempuri.org/IService1/PrikaziOpstineResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOpstineAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOtpust", ReplyAction="http://tempuri.org/IService1/PrikaziOtpustResponse")]
+        System.Data.DataSet PrikaziOtpust();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOtpust", ReplyAction="http://tempuri.org/IService1/PrikaziOtpustResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOtpustAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziPol", ReplyAction="http://tempuri.org/IService1/PrikaziPolResponse")]
+        System.Data.DataSet PrikaziPol();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziPol", ReplyAction="http://tempuri.org/IService1/PrikaziPolResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziPolAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -304,6 +376,102 @@ namespace Hospitalizacija.ServiceReference1 {
         
         public System.Threading.Tasks.Task IzmeniPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
             return base.Channel.IzmeniPacijentaAsync(pacijentInfo);
+        }
+        
+        public System.Data.DataSet PrikaziBolnice() {
+            return base.Channel.PrikaziBolnice();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziBolniceAsync() {
+            return base.Channel.PrikaziBolniceAsync();
+        }
+        
+        public System.Data.DataSet PrikaziOdeljenjaPrijem() {
+            return base.Channel.PrikaziOdeljenjaPrijem();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOdeljenjaPrijemAsync() {
+            return base.Channel.PrikaziOdeljenjaPrijemAsync();
+        }
+        
+        public System.Data.DataSet PrikaziOdeljenjaOtpust() {
+            return base.Channel.PrikaziOdeljenjaOtpust();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOdeljenjaOtpustAsync() {
+            return base.Channel.PrikaziOdeljenjaOtpustAsync();
+        }
+        
+        public System.Data.DataSet PrikaziDijagnozeOsnovna() {
+            return base.Channel.PrikaziDijagnozeOsnovna();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeOsnovnaAsync() {
+            return base.Channel.PrikaziDijagnozeOsnovnaAsync();
+        }
+        
+        public System.Data.DataSet PrikaziDijagnozeUputna() {
+            return base.Channel.PrikaziDijagnozeUputna();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeUputnaAsync() {
+            return base.Channel.PrikaziDijagnozeUputnaAsync();
+        }
+        
+        public System.Data.DataSet PrikaziDijagnozePrateca() {
+            return base.Channel.PrikaziDijagnozePrateca();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozePratecaAsync() {
+            return base.Channel.PrikaziDijagnozePratecaAsync();
+        }
+        
+        public System.Data.DataSet PrikaziDijagnozeSmrt() {
+            return base.Channel.PrikaziDijagnozeSmrt();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeSmrtAsync() {
+            return base.Channel.PrikaziDijagnozeSmrtAsync();
+        }
+        
+        public System.Data.DataSet PrikaziOperacije() {
+            return base.Channel.PrikaziOperacije();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOperacijeAsync() {
+            return base.Channel.PrikaziOperacijeAsync();
+        }
+        
+        public System.Data.DataSet PrikaziDrzave() {
+            return base.Channel.PrikaziDrzave();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDrzaveAsync() {
+            return base.Channel.PrikaziDrzaveAsync();
+        }
+        
+        public System.Data.DataSet PrikaziOpstine() {
+            return base.Channel.PrikaziOpstine();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOpstineAsync() {
+            return base.Channel.PrikaziOpstineAsync();
+        }
+        
+        public System.Data.DataSet PrikaziOtpust() {
+            return base.Channel.PrikaziOtpust();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOtpustAsync() {
+            return base.Channel.PrikaziOtpustAsync();
+        }
+        
+        public System.Data.DataSet PrikaziPol() {
+            return base.Channel.PrikaziPol();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziPolAsync() {
+            return base.Channel.PrikaziPolAsync();
         }
     }
 }

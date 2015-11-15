@@ -32,6 +32,78 @@
   <wsdl:message name="IService1_IzmeniPacijenta_OutputMessage">
     <wsdl:part name="parameters" element="tns:IzmeniPacijentaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_PrikaziBolnice_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziBolnice" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziBolnice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziBolniceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOdeljenjaPrijem_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOdeljenjaPrijem" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOdeljenjaPrijem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOdeljenjaPrijemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOdeljenjaOtpust_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOdeljenjaOtpust" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOdeljenjaOtpust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOdeljenjaOtpustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozeOsnovna_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeOsnovna" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozeOsnovna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeOsnovnaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozeUputna_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeUputna" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozeUputna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeUputnaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozePrateca_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozePrateca" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozePrateca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozePratecaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozeSmrt_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeSmrt" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnozeSmrt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeSmrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOperacije_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOperacije" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOperacije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOperacijeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDrzave_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDrzave" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDrzave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDrzaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOpstine_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOpstine" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOpstine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOpstineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOtpust_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOtpust" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOtpust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOtpustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziPol_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziPol" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziPol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziPolResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UnosPacijenta">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UnosPacijenta" message="tns:IService1_UnosPacijenta_InputMessage" />
@@ -48,6 +120,54 @@
     <wsdl:operation name="IzmeniPacijenta">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzmeniPacijenta" message="tns:IService1_IzmeniPacijenta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzmeniPacijentaResponse" message="tns:IService1_IzmeniPacijenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziBolnice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziBolnice" message="tns:IService1_PrikaziBolnice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziBolniceResponse" message="tns:IService1_PrikaziBolnice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOdeljenjaPrijem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOdeljenjaPrijem" message="tns:IService1_PrikaziOdeljenjaPrijem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOdeljenjaPrijemResponse" message="tns:IService1_PrikaziOdeljenjaPrijem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOdeljenjaOtpust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust" message="tns:IService1_PrikaziOdeljenjaOtpust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpustResponse" message="tns:IService1_PrikaziOdeljenjaOtpust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozeOsnovna">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovna" message="tns:IService1_PrikaziDijagnozeOsnovna_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovnaResponse" message="tns:IService1_PrikaziDijagnozeOsnovna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozeUputna">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeUputna" message="tns:IService1_PrikaziDijagnozeUputna_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeUputnaResponse" message="tns:IService1_PrikaziDijagnozeUputna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozePrateca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozePrateca" message="tns:IService1_PrikaziDijagnozePrateca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozePratecaResponse" message="tns:IService1_PrikaziDijagnozePrateca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozeSmrt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeSmrt" message="tns:IService1_PrikaziDijagnozeSmrt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeSmrtResponse" message="tns:IService1_PrikaziDijagnozeSmrt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOperacije">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOperacije" message="tns:IService1_PrikaziOperacije_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOperacijeResponse" message="tns:IService1_PrikaziOperacije_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDrzave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDrzave" message="tns:IService1_PrikaziDrzave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDrzaveResponse" message="tns:IService1_PrikaziDrzave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOpstine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOpstine" message="tns:IService1_PrikaziOpstine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOpstineResponse" message="tns:IService1_PrikaziOpstine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOtpust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOtpust" message="tns:IService1_PrikaziOtpust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOtpustResponse" message="tns:IService1_PrikaziOtpust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziPol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziPol" message="tns:IService1_PrikaziPol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziPolResponse" message="tns:IService1_PrikaziPol_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -81,6 +201,114 @@
     </wsdl:operation>
     <wsdl:operation name="IzmeniPacijenta">
       <soap:operation soapAction="http://tempuri.org/IService1/IzmeniPacijenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziBolnice">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziBolnice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOdeljenjaPrijem">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOdeljenjaPrijem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOdeljenjaOtpust">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozeOsnovna">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziDijagnozeOsnovna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozeUputna">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziDijagnozeUputna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozePrateca">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziDijagnozePrateca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnozeSmrt">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziDijagnozeSmrt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOperacije">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOperacije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDrzave">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziDrzave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOpstine">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOpstine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOtpust">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOtpust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziPol">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziPol" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

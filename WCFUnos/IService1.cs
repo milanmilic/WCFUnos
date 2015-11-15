@@ -30,10 +30,22 @@ namespace WCFUnos
         DataSet PrikaziBolnice();
 
         [OperationContract]
-        DataSet PrikaziOdeljenja();
+        DataSet PrikaziOdeljenjaPrijem();
 
         [OperationContract]
-        DataSet PrikaziDijagnoze();
+        DataSet PrikaziOdeljenjaOtpust();
+
+        [OperationContract]
+        DataSet PrikaziDijagnozeOsnovna();
+
+        [OperationContract]
+        DataSet PrikaziDijagnozeUputna();
+
+        [OperationContract]
+        DataSet PrikaziDijagnozePrateca();
+
+        [OperationContract]
+        DataSet PrikaziDijagnozeSmrt();
 
         [OperationContract]
         DataSet PrikaziOperacije();
@@ -139,6 +151,11 @@ namespace WCFUnos
         public int id { get; set; }
         [DataMember]
         public string Naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + Naziv;
+        }
     }
     [DataContract]
     public class Odeljenje
@@ -147,6 +164,11 @@ namespace WCFUnos
         public int id { get; set; }
         [DataMember]
         public string Naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + Naziv;
+        }
     }
     [DataContract]
     public class Dijagnoza
@@ -155,6 +177,11 @@ namespace WCFUnos
         public string id { get; set; }
         [DataMember]
         public string Naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + Naziv;
+        }
     }
     [DataContract]
     public class Operacije
@@ -171,6 +198,11 @@ namespace WCFUnos
         public int id { get; set; }
         [DataMember]
         public string Naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + Naziv;
+        }
     }
     [DataContract]
     public class Opstina
@@ -179,6 +211,11 @@ namespace WCFUnos
         public string id { get; set; }
         [DataMember]
         public string Naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + Naziv;
+        }
     }
     [DataContract]
     public class Otpust
@@ -187,6 +224,11 @@ namespace WCFUnos
         public char id { get; set; }
         [DataMember]
         public string naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + naziv;
+        }
     }
     [DataContract]
     public class Pol
@@ -195,5 +237,10 @@ namespace WCFUnos
         public int id { get; set; }
         [DataMember]
         public string naziv { get; set; }
+
+        public override string ToString()
+        {
+            return id + " " + naziv;
+        }
     }
 }
