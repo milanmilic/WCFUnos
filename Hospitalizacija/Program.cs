@@ -16,7 +16,7 @@ namespace Hospitalizacija
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_pacijent());
+            Application.Run(new IzvestajHospitalizacija());
         }
     }
 }
