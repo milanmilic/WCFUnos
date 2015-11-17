@@ -8,29 +8,11 @@
       <xsd:import schemaLocation="http://localhost:62752/Service1.svc?xsd=xsd3" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_UnosPacijenta_InputMessage">
-    <wsdl:part name="parameters" element="tns:UnosPacijenta" />
+  <wsdl:message name="IService1_UnosHospitalizacije_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnosHospitalizacije" />
   </wsdl:message>
-  <wsdl:message name="IService1_UnosPacijenta_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UnosPacijentaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PrikaziPacijenta_InputMessage">
-    <wsdl:part name="parameters" element="tns:PrikaziPacijenta" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PrikaziPacijenta_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PrikaziPacijentaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IzbrisiPacijenta_InputMessage">
-    <wsdl:part name="parameters" element="tns:IzbrisiPacijenta" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IzbrisiPacijenta_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IzbrisiPacijentaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IzmeniPacijenta_InputMessage">
-    <wsdl:part name="parameters" element="tns:IzmeniPacijenta" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IzmeniPacijenta_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IzmeniPacijentaResponse" />
+  <wsdl:message name="IService1_UnosHospitalizacije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnosHospitalizacijeResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_PrikaziBolnice_InputMessage">
     <wsdl:part name="parameters" element="tns:PrikaziBolnice" />
@@ -104,22 +86,16 @@
   <wsdl:message name="IService1_PrikaziPol_OutputMessage">
     <wsdl:part name="parameters" element="tns:PrikaziPolResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOsiguranje_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOsiguranje" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziOsiguranje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziOsiguranjeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="UnosPacijenta">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UnosPacijenta" message="tns:IService1_UnosPacijenta_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UnosPacijentaResponse" message="tns:IService1_UnosPacijenta_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PrikaziPacijenta">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziPacijenta" message="tns:IService1_PrikaziPacijenta_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziPacijentaResponse" message="tns:IService1_PrikaziPacijenta_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="IzbrisiPacijenta">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzbrisiPacijenta" message="tns:IService1_IzbrisiPacijenta_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzbrisiPacijentaResponse" message="tns:IService1_IzbrisiPacijenta_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="IzmeniPacijenta">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzmeniPacijenta" message="tns:IService1_IzmeniPacijenta_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzmeniPacijentaResponse" message="tns:IService1_IzmeniPacijenta_OutputMessage" />
+    <wsdl:operation name="UnosHospitalizacije">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UnosHospitalizacije" message="tns:IService1_UnosHospitalizacije_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UnosHospitalizacijeResponse" message="tns:IService1_UnosHospitalizacije_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PrikaziBolnice">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziBolnice" message="tns:IService1_PrikaziBolnice_InputMessage" />
@@ -169,38 +145,15 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziPol" message="tns:IService1_PrikaziPol_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziPolResponse" message="tns:IService1_PrikaziPol_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PrikaziOsiguranje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOsiguranje" message="tns:IService1_PrikaziOsiguranje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOsiguranjeResponse" message="tns:IService1_PrikaziOsiguranje_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="UnosPacijenta">
-      <soap:operation soapAction="http://tempuri.org/IService1/UnosPacijenta" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PrikaziPacijenta">
-      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziPacijenta" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IzbrisiPacijenta">
-      <soap:operation soapAction="http://tempuri.org/IService1/IzbrisiPacijenta" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IzmeniPacijenta">
-      <soap:operation soapAction="http://tempuri.org/IService1/IzmeniPacijenta" style="document" />
+    <wsdl:operation name="UnosHospitalizacije">
+      <soap:operation soapAction="http://tempuri.org/IService1/UnosHospitalizacije" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -309,6 +262,15 @@
     </wsdl:operation>
     <wsdl:operation name="PrikaziPol">
       <soap:operation soapAction="http://tempuri.org/IService1/PrikaziPol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziOsiguranje">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOsiguranje" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

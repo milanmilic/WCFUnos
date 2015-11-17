@@ -224,7 +224,6 @@
             this.btn_save.TabIndex = 20;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_delete
             // 
@@ -234,7 +233,6 @@
             this.btn_delete.TabIndex = 21;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
             // 
@@ -244,7 +242,6 @@
             this.btn_update.TabIndex = 22;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // dataGridView1
             // 
@@ -262,7 +259,6 @@
             this.btn_edit.TabIndex = 24;
             this.btn_edit.Text = "Edit";
             this.btn_edit.UseVisualStyleBackColor = true;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // Frm_pacijent
             // 

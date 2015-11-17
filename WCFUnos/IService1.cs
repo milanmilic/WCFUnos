@@ -9,22 +9,12 @@ using System.Text;
 
 namespace WCFUnos
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IService1
     {
-
+        //metode za CRUD iz interfejsa koje ce biti nasledjene
         [OperationContract]
-        string UnosPacijenta(Pacijent pacijentInfo);
-
-        [OperationContract]
-        DataSet PrikaziPacijenta();
-
-        [OperationContract]
-        bool IzbrisiPacijenta(Pacijent pacijentInfo);
-
-        [OperationContract]
-        void IzmeniPacijenta(Pacijent pacijentInfo);
+        string UnosHospitalizacije(Pacijent pacijentInfo, Bolnickiracun bolRac);
 
         [OperationContract]
         DataSet PrikaziBolnice();
@@ -61,10 +51,12 @@ namespace WCFUnos
 
         [OperationContract]
         DataSet PrikaziPol();
+
+        [OperationContract]
+        DataSet PrikaziOsiguranje();
     }
 
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
+    //klase koje odgovaraju tabelama iz baze
     [DataContract]
     public class Pacijent
     {
@@ -242,5 +234,14 @@ namespace WCFUnos
         {
             return id + " " + naziv;
         }
+    }
+
+    [DataContract]
+    public class Osiguranje
+    {
+        [DataMember]
+        public int id { get; set; }
+        [DataMember]
+        public string naziv { get; set; }
     }
 }

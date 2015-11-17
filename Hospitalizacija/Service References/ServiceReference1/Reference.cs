@@ -218,33 +218,284 @@ namespace Hospitalizacija.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Bolnickiracun", Namespace="http://schemas.datacontract.org/2004/07/WCFUnos")]
+    [System.SerializableAttribute()]
+    public partial class Bolnickiracun : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int br_dana_lezanjaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string br_istorije_bolestiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datum_ispisaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datum_prijemaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_bolnicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string id_dijagnoza1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_odeljenjeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_odeljenje_otpustField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string id_operacije1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string id_osnovni_uzrok_hospitalizacijeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string id_osnovni_uzrok_smrtiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string id_uputna_dijagnozaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_vrsta_otpustaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime vreme_unosaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int br_dana_lezanja {
+            get {
+                return this.br_dana_lezanjaField;
+            }
+            set {
+                if ((this.br_dana_lezanjaField.Equals(value) != true)) {
+                    this.br_dana_lezanjaField = value;
+                    this.RaisePropertyChanged("br_dana_lezanja");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string br_istorije_bolesti {
+            get {
+                return this.br_istorije_bolestiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.br_istorije_bolestiField, value) != true)) {
+                    this.br_istorije_bolestiField = value;
+                    this.RaisePropertyChanged("br_istorije_bolesti");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum_ispisa {
+            get {
+                return this.datum_ispisaField;
+            }
+            set {
+                if ((this.datum_ispisaField.Equals(value) != true)) {
+                    this.datum_ispisaField = value;
+                    this.RaisePropertyChanged("datum_ispisa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum_prijema {
+            get {
+                return this.datum_prijemaField;
+            }
+            set {
+                if ((this.datum_prijemaField.Equals(value) != true)) {
+                    this.datum_prijemaField = value;
+                    this.RaisePropertyChanged("datum_prijema");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_bolnica {
+            get {
+                return this.id_bolnicaField;
+            }
+            set {
+                if ((this.id_bolnicaField.Equals(value) != true)) {
+                    this.id_bolnicaField = value;
+                    this.RaisePropertyChanged("id_bolnica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id_dijagnoza1 {
+            get {
+                return this.id_dijagnoza1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.id_dijagnoza1Field, value) != true)) {
+                    this.id_dijagnoza1Field = value;
+                    this.RaisePropertyChanged("id_dijagnoza1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_odeljenje {
+            get {
+                return this.id_odeljenjeField;
+            }
+            set {
+                if ((this.id_odeljenjeField.Equals(value) != true)) {
+                    this.id_odeljenjeField = value;
+                    this.RaisePropertyChanged("id_odeljenje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_odeljenje_otpust {
+            get {
+                return this.id_odeljenje_otpustField;
+            }
+            set {
+                if ((this.id_odeljenje_otpustField.Equals(value) != true)) {
+                    this.id_odeljenje_otpustField = value;
+                    this.RaisePropertyChanged("id_odeljenje_otpust");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id_operacije1 {
+            get {
+                return this.id_operacije1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.id_operacije1Field, value) != true)) {
+                    this.id_operacije1Field = value;
+                    this.RaisePropertyChanged("id_operacije1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id_osnovni_uzrok_hospitalizacije {
+            get {
+                return this.id_osnovni_uzrok_hospitalizacijeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.id_osnovni_uzrok_hospitalizacijeField, value) != true)) {
+                    this.id_osnovni_uzrok_hospitalizacijeField = value;
+                    this.RaisePropertyChanged("id_osnovni_uzrok_hospitalizacije");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id_osnovni_uzrok_smrti {
+            get {
+                return this.id_osnovni_uzrok_smrtiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.id_osnovni_uzrok_smrtiField, value) != true)) {
+                    this.id_osnovni_uzrok_smrtiField = value;
+                    this.RaisePropertyChanged("id_osnovni_uzrok_smrti");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id_uputna_dijagnoza {
+            get {
+                return this.id_uputna_dijagnozaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.id_uputna_dijagnozaField, value) != true)) {
+                    this.id_uputna_dijagnozaField = value;
+                    this.RaisePropertyChanged("id_uputna_dijagnoza");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_vrsta_otpusta {
+            get {
+                return this.id_vrsta_otpustaField;
+            }
+            set {
+                if ((this.id_vrsta_otpustaField.Equals(value) != true)) {
+                    this.id_vrsta_otpustaField = value;
+                    this.RaisePropertyChanged("id_vrsta_otpusta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime vreme_unosa {
+            get {
+                return this.vreme_unosaField;
+            }
+            set {
+                if ((this.vreme_unosaField.Equals(value) != true)) {
+                    this.vreme_unosaField = value;
+                    this.RaisePropertyChanged("vreme_unosa");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnosPacijenta", ReplyAction="http://tempuri.org/IService1/UnosPacijentaResponse")]
-        string UnosPacijenta(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnosHospitalizacije", ReplyAction="http://tempuri.org/IService1/UnosHospitalizacijeResponse")]
+        string UnosHospitalizacije(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnosPacijenta", ReplyAction="http://tempuri.org/IService1/UnosPacijentaResponse")]
-        System.Threading.Tasks.Task<string> UnosPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziPacijenta", ReplyAction="http://tempuri.org/IService1/PrikaziPacijentaResponse")]
-        System.Data.DataSet PrikaziPacijenta();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziPacijenta", ReplyAction="http://tempuri.org/IService1/PrikaziPacijentaResponse")]
-        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziPacijentaAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzbrisiPacijenta", ReplyAction="http://tempuri.org/IService1/IzbrisiPacijentaResponse")]
-        bool IzbrisiPacijenta(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzbrisiPacijenta", ReplyAction="http://tempuri.org/IService1/IzbrisiPacijentaResponse")]
-        System.Threading.Tasks.Task<bool> IzbrisiPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzmeniPacijenta", ReplyAction="http://tempuri.org/IService1/IzmeniPacijentaResponse")]
-        void IzmeniPacijenta(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzmeniPacijenta", ReplyAction="http://tempuri.org/IService1/IzmeniPacijentaResponse")]
-        System.Threading.Tasks.Task IzmeniPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnosHospitalizacije", ReplyAction="http://tempuri.org/IService1/UnosHospitalizacijeResponse")]
+        System.Threading.Tasks.Task<string> UnosHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziBolnice", ReplyAction="http://tempuri.org/IService1/PrikaziBolniceResponse")]
         System.Data.DataSet PrikaziBolnice();
@@ -317,6 +568,12 @@ namespace Hospitalizacija.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziPol", ReplyAction="http://tempuri.org/IService1/PrikaziPolResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> PrikaziPolAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOsiguranje", ReplyAction="http://tempuri.org/IService1/PrikaziOsiguranjeResponse")]
+        System.Data.DataSet PrikaziOsiguranje();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOsiguranje", ReplyAction="http://tempuri.org/IService1/PrikaziOsiguranjeResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOsiguranjeAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -346,36 +603,12 @@ namespace Hospitalizacija.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string UnosPacijenta(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
-            return base.Channel.UnosPacijenta(pacijentInfo);
+        public string UnosHospitalizacije(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac) {
+            return base.Channel.UnosHospitalizacije(pacijentInfo, bolRac);
         }
         
-        public System.Threading.Tasks.Task<string> UnosPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
-            return base.Channel.UnosPacijentaAsync(pacijentInfo);
-        }
-        
-        public System.Data.DataSet PrikaziPacijenta() {
-            return base.Channel.PrikaziPacijenta();
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziPacijentaAsync() {
-            return base.Channel.PrikaziPacijentaAsync();
-        }
-        
-        public bool IzbrisiPacijenta(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
-            return base.Channel.IzbrisiPacijenta(pacijentInfo);
-        }
-        
-        public System.Threading.Tasks.Task<bool> IzbrisiPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
-            return base.Channel.IzbrisiPacijentaAsync(pacijentInfo);
-        }
-        
-        public void IzmeniPacijenta(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
-            base.Channel.IzmeniPacijenta(pacijentInfo);
-        }
-        
-        public System.Threading.Tasks.Task IzmeniPacijentaAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo) {
-            return base.Channel.IzmeniPacijentaAsync(pacijentInfo);
+        public System.Threading.Tasks.Task<string> UnosHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac) {
+            return base.Channel.UnosHospitalizacijeAsync(pacijentInfo, bolRac);
         }
         
         public System.Data.DataSet PrikaziBolnice() {
@@ -472,6 +705,14 @@ namespace Hospitalizacija.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziPolAsync() {
             return base.Channel.PrikaziPolAsync();
+        }
+        
+        public System.Data.DataSet PrikaziOsiguranje() {
+            return base.Channel.PrikaziOsiguranje();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOsiguranjeAsync() {
+            return base.Channel.PrikaziOsiguranjeAsync();
         }
     }
 }

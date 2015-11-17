@@ -16,4 +16,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Pacijent" nillable="true" type="tns:Pacijent" />
+  <xs:complexType name="Bolnickiracun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="br_dana_lezanja" type="xs:int" />
+      <xs:element minOccurs="0" name="br_istorije_bolesti" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="datum_ispisa" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datum_prijema" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:double" />
+      <xs:element minOccurs="0" name="id_bolnica" type="xs:int" />
+      <xs:element minOccurs="0" name="id_dijagnoza1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_odeljenje" type="xs:int" />
+      <xs:element minOccurs="0" name="id_odeljenje_otpust" type="xs:int" />
+      <xs:element minOccurs="0" name="id_operacije1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_osnovni_uzrok_hospitalizacije" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_osnovni_uzrok_smrti" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_uputna_dijagnoza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_vrsta_otpusta" type="xs:int" />
+      <xs:element minOccurs="0" name="vreme_unosa" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bolnickiracun" nillable="true" type="tns:Bolnickiracun" />
 </xs:schema>
