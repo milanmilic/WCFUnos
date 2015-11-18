@@ -515,6 +515,12 @@ namespace Hospitalizacija.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust", ReplyAction="http://tempuri.org/IService1/PrikaziOdeljenjaOtpustResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOdeljenjaOtpustAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnoze", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeResponse")]
+        System.Data.DataSet PrikaziDijagnoze();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnoze", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovna", ReplyAction="http://tempuri.org/IService1/PrikaziDijagnozeOsnovnaResponse")]
         System.Data.DataSet PrikaziDijagnozeOsnovna();
         
@@ -633,6 +639,14 @@ namespace Hospitalizacija.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziOdeljenjaOtpustAsync() {
             return base.Channel.PrikaziOdeljenjaOtpustAsync();
+        }
+        
+        public System.Data.DataSet PrikaziDijagnoze() {
+            return base.Channel.PrikaziDijagnoze();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> PrikaziDijagnozeAsync() {
+            return base.Channel.PrikaziDijagnozeAsync();
         }
         
         public System.Data.DataSet PrikaziDijagnozeOsnovna() {

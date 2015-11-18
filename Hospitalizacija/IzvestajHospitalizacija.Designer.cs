@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IzvestajHospitalizacija));
             this.label1 = new System.Windows.Forms.Label();
             this.gb_podaci_o_bolnici = new System.Windows.Forms.GroupBox();
             this.dtp_datum_prijema = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gb_podaci_o_pacijentu = new System.Windows.Forms.GroupBox();
+            this.txt_starost = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.cmb_osiguranje = new System.Windows.Forms.ComboBox();
             this.cmb_opstina = new System.Windows.Forms.ComboBox();
@@ -73,6 +75,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.gb_zakljucni_podaci = new System.Windows.Forms.GroupBox();
             this.cmb_osn_uzrok_smrti_sifra = new System.Windows.Forms.ComboBox();
+            this.txt_br_dana_lezanja = new System.Windows.Forms.TextBox();
             this.cmb_osn_uzrok_smrti = new System.Windows.Forms.ComboBox();
             this.cmb_vrsta_otpusta = new System.Windows.Forms.ComboBox();
             this.cmb_odeljenje_otpust = new System.Windows.Forms.ComboBox();
@@ -83,9 +86,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btn_unos_izvestaja = new System.Windows.Forms.Button();
-            this.txt_br_dana_lezanja = new System.Windows.Forms.TextBox();
-            this.txt_starost = new System.Windows.Forms.TextBox();
             this.lbl_status = new System.Windows.Forms.Label();
+            this.btn_zatvori = new System.Windows.Forms.Button();
             this.gb_podaci_o_bolnici.SuspendLayout();
             this.gb_podaci_o_pacijentu.SuspendLayout();
             this.gb_dijagnoze_procedure.SuspendLayout();
@@ -124,30 +126,32 @@
             this.dtp_datum_prijema.Location = new System.Drawing.Point(172, 130);
             this.dtp_datum_prijema.Name = "dtp_datum_prijema";
             this.dtp_datum_prijema.Size = new System.Drawing.Size(200, 20);
-            this.dtp_datum_prijema.TabIndex = 7;
+            this.dtp_datum_prijema.TabIndex = 4;
             // 
             // txt_br_istorije_bol
             // 
             this.txt_br_istorije_bol.Location = new System.Drawing.Point(172, 97);
             this.txt_br_istorije_bol.Name = "txt_br_istorije_bol";
             this.txt_br_istorije_bol.Size = new System.Drawing.Size(165, 20);
-            this.txt_br_istorije_bol.TabIndex = 6;
+            this.txt_br_istorije_bol.TabIndex = 3;
             // 
             // cmb_odeljenje_prijem
             // 
+            this.cmb_odeljenje_prijem.ForeColor = System.Drawing.Color.Red;
             this.cmb_odeljenje_prijem.FormattingEnabled = true;
             this.cmb_odeljenje_prijem.Location = new System.Drawing.Point(172, 61);
             this.cmb_odeljenje_prijem.Name = "cmb_odeljenje_prijem";
             this.cmb_odeljenje_prijem.Size = new System.Drawing.Size(468, 21);
-            this.cmb_odeljenje_prijem.TabIndex = 5;
+            this.cmb_odeljenje_prijem.TabIndex = 2;
             // 
             // cmb_zdr_ustanova
             // 
+            this.cmb_zdr_ustanova.ForeColor = System.Drawing.Color.Red;
             this.cmb_zdr_ustanova.FormattingEnabled = true;
             this.cmb_zdr_ustanova.Location = new System.Drawing.Point(172, 25);
             this.cmb_zdr_ustanova.Name = "cmb_zdr_ustanova";
             this.cmb_zdr_ustanova.Size = new System.Drawing.Size(468, 21);
-            this.cmb_zdr_ustanova.TabIndex = 4;
+            this.cmb_zdr_ustanova.TabIndex = 1;
             // 
             // label5
             // 
@@ -214,6 +218,17 @@
             this.gb_podaci_o_pacijentu.TabStop = false;
             this.gb_podaci_o_pacijentu.Text = "Подаци о пацијенту";
             // 
+            // txt_starost
+            // 
+            this.txt_starost.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_starost.Enabled = false;
+            this.txt_starost.ForeColor = System.Drawing.Color.Blue;
+            this.txt_starost.Location = new System.Drawing.Point(564, 66);
+            this.txt_starost.Name = "txt_starost";
+            this.txt_starost.Size = new System.Drawing.Size(42, 13);
+            this.txt_starost.TabIndex = 20;
+            this.txt_starost.TabStop = false;
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -225,63 +240,67 @@
             // 
             // cmb_osiguranje
             // 
+            this.cmb_osiguranje.ForeColor = System.Drawing.Color.Red;
             this.cmb_osiguranje.FormattingEnabled = true;
             this.cmb_osiguranje.Location = new System.Drawing.Point(562, 162);
             this.cmb_osiguranje.Name = "cmb_osiguranje";
             this.cmb_osiguranje.Size = new System.Drawing.Size(88, 21);
-            this.cmb_osiguranje.TabIndex = 17;
+            this.cmb_osiguranje.TabIndex = 13;
             // 
             // cmb_opstina
             // 
+            this.cmb_opstina.ForeColor = System.Drawing.Color.Red;
             this.cmb_opstina.FormattingEnabled = true;
             this.cmb_opstina.Location = new System.Drawing.Point(562, 130);
             this.cmb_opstina.Name = "cmb_opstina";
             this.cmb_opstina.Size = new System.Drawing.Size(187, 21);
-            this.cmb_opstina.TabIndex = 16;
+            this.cmb_opstina.TabIndex = 12;
             // 
             // cmb_drzavljanstvo
             // 
+            this.cmb_drzavljanstvo.ForeColor = System.Drawing.Color.Red;
             this.cmb_drzavljanstvo.FormattingEnabled = true;
             this.cmb_drzavljanstvo.Location = new System.Drawing.Point(562, 98);
             this.cmb_drzavljanstvo.Name = "cmb_drzavljanstvo";
             this.cmb_drzavljanstvo.Size = new System.Drawing.Size(187, 21);
-            this.cmb_drzavljanstvo.TabIndex = 15;
+            this.cmb_drzavljanstvo.TabIndex = 11;
             // 
             // txt_jmbg
             // 
             this.txt_jmbg.Location = new System.Drawing.Point(564, 34);
             this.txt_jmbg.Name = "txt_jmbg";
             this.txt_jmbg.Size = new System.Drawing.Size(120, 20);
-            this.txt_jmbg.TabIndex = 14;
+            this.txt_jmbg.TabIndex = 10;
             // 
             // txt_lbo
             // 
             this.txt_lbo.Location = new System.Drawing.Point(172, 162);
             this.txt_lbo.Name = "txt_lbo";
             this.txt_lbo.Size = new System.Drawing.Size(133, 20);
-            this.txt_lbo.TabIndex = 13;
+            this.txt_lbo.TabIndex = 9;
             // 
             // cmb_pol
             // 
+            this.cmb_pol.ForeColor = System.Drawing.Color.Red;
             this.cmb_pol.FormattingEnabled = true;
             this.cmb_pol.Location = new System.Drawing.Point(172, 130);
             this.cmb_pol.Name = "cmb_pol";
             this.cmb_pol.Size = new System.Drawing.Size(165, 21);
-            this.cmb_pol.TabIndex = 12;
+            this.cmb_pol.TabIndex = 8;
             // 
             // txt_adresa_preb
             // 
             this.txt_adresa_preb.Location = new System.Drawing.Point(172, 98);
             this.txt_adresa_preb.Name = "txt_adresa_preb";
             this.txt_adresa_preb.Size = new System.Drawing.Size(271, 20);
-            this.txt_adresa_preb.TabIndex = 11;
+            this.txt_adresa_preb.TabIndex = 7;
             // 
             // dtp_datum_rodjenja
             // 
             this.dtp_datum_rodjenja.Location = new System.Drawing.Point(172, 63);
             this.dtp_datum_rodjenja.Name = "dtp_datum_rodjenja";
             this.dtp_datum_rodjenja.Size = new System.Drawing.Size(200, 20);
-            this.dtp_datum_rodjenja.TabIndex = 10;
+            this.dtp_datum_rodjenja.TabIndex = 6;
             this.dtp_datum_rodjenja.Leave += new System.EventHandler(this.dtp_datum_rodjenja_Leave);
             // 
             // txt_prezime_ime_pacijenta
@@ -289,7 +308,7 @@
             this.txt_prezime_ime_pacijenta.Location = new System.Drawing.Point(172, 34);
             this.txt_prezime_ime_pacijenta.Name = "txt_prezime_ime_pacijenta";
             this.txt_prezime_ime_pacijenta.Size = new System.Drawing.Size(271, 20);
-            this.txt_prezime_ime_pacijenta.TabIndex = 9;
+            this.txt_prezime_ime_pacijenta.TabIndex = 5;
             // 
             // label7
             // 
@@ -402,6 +421,7 @@
             this.cmb_uputna_dijag.Name = "cmb_uputna_dijag";
             this.cmb_uputna_dijag.Size = new System.Drawing.Size(468, 21);
             this.cmb_uputna_dijag.TabIndex = 16;
+            this.cmb_uputna_dijag.TabStop = false;
             // 
             // cmb_procedura_sifra
             // 
@@ -409,7 +429,7 @@
             this.cmb_procedura_sifra.Location = new System.Drawing.Point(183, 117);
             this.cmb_procedura_sifra.Name = "cmb_procedura_sifra";
             this.cmb_procedura_sifra.Size = new System.Drawing.Size(92, 21);
-            this.cmb_procedura_sifra.TabIndex = 15;
+            this.cmb_procedura_sifra.TabIndex = 17;
             // 
             // cmb_prateca_dijag_sifra
             // 
@@ -417,7 +437,7 @@
             this.cmb_prateca_dijag_sifra.Location = new System.Drawing.Point(196, 86);
             this.cmb_prateca_dijag_sifra.Name = "cmb_prateca_dijag_sifra";
             this.cmb_prateca_dijag_sifra.Size = new System.Drawing.Size(79, 21);
-            this.cmb_prateca_dijag_sifra.TabIndex = 14;
+            this.cmb_prateca_dijag_sifra.TabIndex = 16;
             // 
             // cmb_osn_uzr_hosp_sifra
             // 
@@ -425,7 +445,7 @@
             this.cmb_osn_uzr_hosp_sifra.Location = new System.Drawing.Point(196, 55);
             this.cmb_osn_uzr_hosp_sifra.Name = "cmb_osn_uzr_hosp_sifra";
             this.cmb_osn_uzr_hosp_sifra.Size = new System.Drawing.Size(79, 21);
-            this.cmb_osn_uzr_hosp_sifra.TabIndex = 13;
+            this.cmb_osn_uzr_hosp_sifra.TabIndex = 15;
             // 
             // cmb_uputna_dijag_sifra
             // 
@@ -433,7 +453,7 @@
             this.cmb_uputna_dijag_sifra.Location = new System.Drawing.Point(196, 24);
             this.cmb_uputna_dijag_sifra.Name = "cmb_uputna_dijag_sifra";
             this.cmb_uputna_dijag_sifra.Size = new System.Drawing.Size(79, 21);
-            this.cmb_uputna_dijag_sifra.TabIndex = 12;
+            this.cmb_uputna_dijag_sifra.TabIndex = 14;
             // 
             // cmb_procedura
             // 
@@ -443,6 +463,7 @@
             this.cmb_procedura.Name = "cmb_procedura";
             this.cmb_procedura.Size = new System.Drawing.Size(468, 21);
             this.cmb_procedura.TabIndex = 7;
+            this.cmb_procedura.TabStop = false;
             // 
             // cmb_prateca_dijag
             // 
@@ -452,6 +473,7 @@
             this.cmb_prateca_dijag.Name = "cmb_prateca_dijag";
             this.cmb_prateca_dijag.Size = new System.Drawing.Size(468, 21);
             this.cmb_prateca_dijag.TabIndex = 6;
+            this.cmb_prateca_dijag.TabStop = false;
             // 
             // cmb_osn_uzr_hosp
             // 
@@ -461,6 +483,7 @@
             this.cmb_osn_uzr_hosp.Name = "cmb_osn_uzr_hosp";
             this.cmb_osn_uzr_hosp.Size = new System.Drawing.Size(468, 21);
             this.cmb_osn_uzr_hosp.TabIndex = 5;
+            this.cmb_osn_uzr_hosp.TabStop = false;
             // 
             // label18
             // 
@@ -524,7 +547,18 @@
             this.cmb_osn_uzrok_smrti_sifra.Location = new System.Drawing.Point(144, 176);
             this.cmb_osn_uzrok_smrti_sifra.Name = "cmb_osn_uzrok_smrti_sifra";
             this.cmb_osn_uzrok_smrti_sifra.Size = new System.Drawing.Size(77, 21);
-            this.cmb_osn_uzrok_smrti_sifra.TabIndex = 16;
+            this.cmb_osn_uzrok_smrti_sifra.TabIndex = 21;
+            // 
+            // txt_br_dana_lezanja
+            // 
+            this.txt_br_dana_lezanja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_br_dana_lezanja.Enabled = false;
+            this.txt_br_dana_lezanja.ForeColor = System.Drawing.Color.Blue;
+            this.txt_br_dana_lezanja.Location = new System.Drawing.Point(538, 29);
+            this.txt_br_dana_lezanja.Name = "txt_br_dana_lezanja";
+            this.txt_br_dana_lezanja.Size = new System.Drawing.Size(46, 13);
+            this.txt_br_dana_lezanja.TabIndex = 19;
+            this.txt_br_dana_lezanja.TabStop = false;
             // 
             // cmb_osn_uzrok_smrti
             // 
@@ -534,29 +568,32 @@
             this.cmb_osn_uzrok_smrti.Name = "cmb_osn_uzrok_smrti";
             this.cmb_osn_uzrok_smrti.Size = new System.Drawing.Size(431, 21);
             this.cmb_osn_uzrok_smrti.TabIndex = 9;
+            this.cmb_osn_uzrok_smrti.TabStop = false;
             // 
             // cmb_vrsta_otpusta
             // 
+            this.cmb_vrsta_otpusta.ForeColor = System.Drawing.Color.Red;
             this.cmb_vrsta_otpusta.FormattingEnabled = true;
             this.cmb_vrsta_otpusta.Location = new System.Drawing.Point(123, 129);
             this.cmb_vrsta_otpusta.Name = "cmb_vrsta_otpusta";
             this.cmb_vrsta_otpusta.Size = new System.Drawing.Size(306, 21);
-            this.cmb_vrsta_otpusta.TabIndex = 7;
+            this.cmb_vrsta_otpusta.TabIndex = 20;
             // 
             // cmb_odeljenje_otpust
             // 
+            this.cmb_odeljenje_otpust.ForeColor = System.Drawing.Color.Red;
             this.cmb_odeljenje_otpust.FormattingEnabled = true;
             this.cmb_odeljenje_otpust.Location = new System.Drawing.Point(123, 79);
             this.cmb_odeljenje_otpust.Name = "cmb_odeljenje_otpust";
             this.cmb_odeljenje_otpust.Size = new System.Drawing.Size(438, 21);
-            this.cmb_odeljenje_otpust.TabIndex = 6;
+            this.cmb_odeljenje_otpust.TabIndex = 19;
             // 
             // dtp_datum_otpusta
             // 
             this.dtp_datum_otpusta.Location = new System.Drawing.Point(123, 26);
             this.dtp_datum_otpusta.Name = "dtp_datum_otpusta";
             this.dtp_datum_otpusta.Size = new System.Drawing.Size(200, 20);
-            this.dtp_datum_otpusta.TabIndex = 5;
+            this.dtp_datum_otpusta.TabIndex = 18;
             this.dtp_datum_otpusta.Leave += new System.EventHandler(this.dtp_datum_otpusta_Leave);
             // 
             // label23
@@ -609,30 +646,10 @@
             this.btn_unos_izvestaja.Location = new System.Drawing.Point(13, 839);
             this.btn_unos_izvestaja.Name = "btn_unos_izvestaja";
             this.btn_unos_izvestaja.Size = new System.Drawing.Size(98, 23);
-            this.btn_unos_izvestaja.TabIndex = 5;
+            this.btn_unos_izvestaja.TabIndex = 22;
             this.btn_unos_izvestaja.Text = "Унос извештаја";
             this.btn_unos_izvestaja.UseVisualStyleBackColor = true;
             this.btn_unos_izvestaja.Click += new System.EventHandler(this.btn_unos_izvestaja_Click);
-            // 
-            // txt_br_dana_lezanja
-            // 
-            this.txt_br_dana_lezanja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_br_dana_lezanja.Enabled = false;
-            this.txt_br_dana_lezanja.ForeColor = System.Drawing.Color.Blue;
-            this.txt_br_dana_lezanja.Location = new System.Drawing.Point(538, 29);
-            this.txt_br_dana_lezanja.Name = "txt_br_dana_lezanja";
-            this.txt_br_dana_lezanja.Size = new System.Drawing.Size(46, 13);
-            this.txt_br_dana_lezanja.TabIndex = 19;
-            // 
-            // txt_starost
-            // 
-            this.txt_starost.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_starost.Enabled = false;
-            this.txt_starost.ForeColor = System.Drawing.Color.Blue;
-            this.txt_starost.Location = new System.Drawing.Point(564, 66);
-            this.txt_starost.Name = "txt_starost";
-            this.txt_starost.Size = new System.Drawing.Size(42, 13);
-            this.txt_starost.TabIndex = 20;
             // 
             // lbl_status
             // 
@@ -643,12 +660,23 @@
             this.lbl_status.Size = new System.Drawing.Size(489, 23);
             this.lbl_status.TabIndex = 6;
             // 
+            // btn_zatvori
+            // 
+            this.btn_zatvori.Location = new System.Drawing.Point(677, 839);
+            this.btn_zatvori.Name = "btn_zatvori";
+            this.btn_zatvori.Size = new System.Drawing.Size(75, 23);
+            this.btn_zatvori.TabIndex = 23;
+            this.btn_zatvori.Text = "Затвори";
+            this.btn_zatvori.UseVisualStyleBackColor = true;
+            this.btn_zatvori.Click += new System.EventHandler(this.btn_zatvori_Click);
+            // 
             // IzvestajHospitalizacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(781, 879);
+            this.Controls.Add(this.btn_zatvori);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.btn_unos_izvestaja);
             this.Controls.Add(this.gb_zakljucni_podaci);
@@ -656,6 +684,7 @@
             this.Controls.Add(this.gb_podaci_o_pacijentu);
             this.Controls.Add(this.gb_podaci_o_bolnici);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IzvestajHospitalizacija";
             this.Text = "Izveštaj o hospitalizaciji";
             this.gb_podaci_o_bolnici.ResumeLayout(false);
@@ -730,5 +759,6 @@
         private System.Windows.Forms.TextBox txt_starost;
         private System.Windows.Forms.TextBox txt_br_dana_lezanja;
         private System.Windows.Forms.Label lbl_status;
+        private System.Windows.Forms.Button btn_zatvori;
     }
 }

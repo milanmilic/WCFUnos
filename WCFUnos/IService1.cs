@@ -26,6 +26,9 @@ namespace WCFUnos
         DataSet PrikaziOdeljenjaOtpust();
 
         [OperationContract]
+        DataSet PrikaziDijagnoze();
+
+        [OperationContract]
         DataSet PrikaziDijagnozeOsnovna();
 
         [OperationContract]

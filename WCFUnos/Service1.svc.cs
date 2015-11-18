@@ -204,6 +204,29 @@ namespace WCFUnos
             }
         }
 
+        public DataSet PrikaziDijagnoze()
+        {
+            using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    cmd.ExecuteNonQuery();
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally { con.Close(); }
+            } throw new NotImplementedException();
+        }
+
         public DataSet PrikaziDijagnozeOsnovna()
         {
             using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
@@ -303,7 +326,7 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 id, naziv FROM i_operacije ORDER BY id ASC", con);
+                    SqlCommand cmd = new SqlCommand("SELECT id, naziv FROM i_operacije ORDER BY id ASC", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);

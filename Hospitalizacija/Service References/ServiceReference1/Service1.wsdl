@@ -32,6 +32,12 @@
   <wsdl:message name="IService1_PrikaziOdeljenjaOtpust_OutputMessage">
     <wsdl:part name="parameters" element="tns:PrikaziOdeljenjaOtpustResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnoze_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnoze" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PrikaziDijagnoze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrikaziDijagnozeResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_PrikaziDijagnozeOsnovna_InputMessage">
     <wsdl:part name="parameters" element="tns:PrikaziDijagnozeOsnovna" />
   </wsdl:message>
@@ -109,6 +115,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust" message="tns:IService1_PrikaziOdeljenjaOtpust_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziOdeljenjaOtpustResponse" message="tns:IService1_PrikaziOdeljenjaOtpust_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnoze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnoze" message="tns:IService1_PrikaziDijagnoze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeResponse" message="tns:IService1_PrikaziDijagnoze_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PrikaziDijagnozeOsnovna">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovna" message="tns:IService1_PrikaziDijagnozeOsnovna_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziDijagnozeOsnovnaResponse" message="tns:IService1_PrikaziDijagnozeOsnovna_OutputMessage" />
@@ -181,6 +191,15 @@
     </wsdl:operation>
     <wsdl:operation name="PrikaziOdeljenjaOtpust">
       <soap:operation soapAction="http://tempuri.org/IService1/PrikaziOdeljenjaOtpust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrikaziDijagnoze">
+      <soap:operation soapAction="http://tempuri.org/IService1/PrikaziDijagnoze" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

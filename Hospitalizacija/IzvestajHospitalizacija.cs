@@ -196,5 +196,10 @@ namespace Hospitalizacija
             txt_starost.Text = starost.ToString();
         }
 
+        private void btn_zatvori_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
