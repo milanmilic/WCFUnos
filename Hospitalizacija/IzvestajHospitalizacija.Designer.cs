@@ -687,6 +687,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IzvestajHospitalizacija";
             this.Text = "Izveštaj o hospitalizaciji";
+            this.Load += new System.EventHandler(this.IzvestajHospitalizacija_Load);
             this.gb_podaci_o_bolnici.ResumeLayout(false);
             this.gb_podaci_o_bolnici.PerformLayout();
             this.gb_podaci_o_pacijentu.ResumeLayout(false);

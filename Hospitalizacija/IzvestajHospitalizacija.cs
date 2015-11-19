@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -34,9 +35,56 @@ namespace Hospitalizacija
             cmb.AutoCompleteMode = AutoCompleteMode.Suggest;
         }
 
+        private async Task dijagnozeUputnaAsync()
+        {
+            DataSet ds5 = new DataSet();
+            ds5 = await objWebServisa.PrikaziDijagnozeUputnaAsync();
+            cmb_uputna_dijag.DataSource = ds5.Tables[0];
+            cmb_uputna_dijag_sifra.DataSource = ds5.Tables[0];
+            cmb_uputna_dijag_sifra.DisplayMember = ds5.Tables[0].Columns[0].ToString();
+            cmb_uputna_dijag_sifra.ValueMember = ds5.Tables[0].Columns[0].ToString();
+            autocomplete(cmb_uputna_dijag_sifra, ds5);
+            cmb_uputna_dijag.DisplayMember = ds5.Tables[0].Columns[1].ToString();
+        }
+
+        private async Task dijagnozeOsnovnaAsync()
+        {
+            DataSet ds6 = new DataSet();
+            ds6 = await objWebServisa.PrikaziDijagnozeOsnovnaAsync();
+            cmb_osn_uzr_hosp.DataSource = ds6.Tables[0];
+            cmb_osn_uzr_hosp_sifra.DataSource = ds6.Tables[0];
+            cmb_osn_uzr_hosp_sifra.DisplayMember = ds6.Tables[0].Columns[0].ToString();
+            cmb_osn_uzr_hosp_sifra.ValueMember = ds6.Tables[0].Columns[0].ToString();
+            autocomplete(cmb_osn_uzr_hosp_sifra, ds6);
+            cmb_osn_uzr_hosp.DisplayMember = ds6.Tables[0].Columns[1].ToString();
+        }
+
+        private async Task dijagnozePratecaAsync()
+        {
+            DataSet ds7 = new DataSet();
+            ds7 = await objWebServisa.PrikaziDijagnozePratecaAsync();
+            cmb_prateca_dijag.DataSource = ds7.Tables[0];
+            cmb_prateca_dijag_sifra.DataSource = ds7.Tables[0];
+            cmb_prateca_dijag_sifra.DisplayMember = ds7.Tables[0].Columns[0].ToString();
+            cmb_prateca_dijag_sifra.ValueMember = ds7.Tables[0].Columns[0].ToString();
+            autocomplete(cmb_prateca_dijag_sifra, ds7);
+            cmb_prateca_dijag.DisplayMember = ds7.Tables[0].Columns[1].ToString();
+        }
+
+        private async Task operacijeAsync()
+        {
+            DataSet ds8 = new DataSet();
+            ds8 = await objWebServisa.PrikaziOperacijeAsync();
+            cmb_procedura.DataSource = ds8.Tables[0];
+            cmb_procedura_sifra.DataSource = ds8.Tables[0];
+            cmb_procedura_sifra.DisplayMember = ds8.Tables[0].Columns[0].ToString();
+            cmb_procedura_sifra.ValueMember = ds8.Tables[0].Columns[0].ToString();
+            autocomplete(cmb_procedura_sifra, ds8);
+            cmb_procedura.DisplayMember = ds8.Tables[0].Columns[1].ToString();
+        }
+
         private void PrikaziPodatke()
         {
-            //popunjavanje bolnica comboboxa
             DataSet ds = new DataSet();
             ds = objWebServisa.PrikaziBolnice();
             cmb_zdr_ustanova.DataSource = ds.Tables[0];
@@ -66,43 +114,7 @@ namespace Hospitalizacija
             cmb_pol.DataSource = ds4.Tables[0];
             cmb_pol.DisplayMember = ds4.Tables[0].Columns[1].ToString();
             cmb_pol.ValueMember = ds4.Tables[0].Columns[0].ToString();
-            //popunjavanje uputna dijagnoza comboboxa
-            DataSet ds5 = new DataSet();
-            ds5 = objWebServisa.PrikaziDijagnozeUputna();
-            cmb_uputna_dijag.DataSource = ds5.Tables[0];
-            cmb_uputna_dijag_sifra.DataSource =  ds5.Tables[0];
-            cmb_uputna_dijag_sifra.DisplayMember = ds5.Tables[0].Columns[0].ToString();
-            cmb_uputna_dijag_sifra.ValueMember = ds5.Tables[0].Columns[0].ToString();
-            autocomplete(cmb_uputna_dijag_sifra, ds5);
-            cmb_uputna_dijag.DisplayMember = ds5.Tables[0].Columns[1].ToString();
-            //popunjavanje osnovna dijagnoza comboboxa
-            DataSet ds6 = new DataSet();
-            ds6 = objWebServisa.PrikaziDijagnozeOsnovna();
-            cmb_osn_uzr_hosp.DataSource = ds6.Tables[0];
-            cmb_osn_uzr_hosp_sifra.DataSource = ds6.Tables[0];
-            cmb_osn_uzr_hosp_sifra.DisplayMember = ds6.Tables[0].Columns[0].ToString();
-            cmb_osn_uzr_hosp_sifra.ValueMember = ds6.Tables[0].Columns[0].ToString();
-            autocomplete(cmb_osn_uzr_hosp_sifra, ds6);
-            cmb_osn_uzr_hosp.DisplayMember = ds6.Tables[0].Columns[1].ToString();
-            //popunjavanje prateca dijagnoza comboboxa
-            DataSet ds7 = new DataSet();
-            ds7 = objWebServisa.PrikaziDijagnozePrateca();
-            cmb_prateca_dijag.DataSource = ds7.Tables[0];
-            cmb_prateca_dijag_sifra.DataSource = ds7.Tables[0];
-            cmb_prateca_dijag_sifra.DisplayMember = ds7.Tables[0].Columns[0].ToString();
-            cmb_prateca_dijag_sifra.ValueMember = ds7.Tables[0].Columns[0].ToString();
-            autocomplete(cmb_prateca_dijag_sifra, ds7);
-            cmb_prateca_dijag.DisplayMember = ds7.Tables[0].Columns[1].ToString();
-            //popunjavanje procedura/operacija comboboxa
-            DataSet ds8 = new DataSet();
-            ds8 = objWebServisa.PrikaziOperacije();
-            cmb_procedura.DataSource = ds8.Tables[0];
-            cmb_procedura_sifra.DataSource = ds8.Tables[0];
-            cmb_procedura_sifra.DisplayMember = ds8.Tables[0].Columns[0].ToString();
-            cmb_procedura_sifra.ValueMember = ds8.Tables[0].Columns[0].ToString();
-            autocomplete(cmb_procedura_sifra, ds8);
-            cmb_procedura.DisplayMember = ds8.Tables[0].Columns[1].ToString();
-            //popunjavanje odeljenje otpust comboboxa
+            //popunjava odeljenja otpust combobox
             DataSet ds9 = new DataSet();
             ds9 = objWebServisa.PrikaziOdeljenjaOtpust();
             cmb_odeljenje_otpust.DataSource = ds9.Tables[0];
@@ -199,6 +211,14 @@ namespace Hospitalizacija
         private void btn_zatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private async void IzvestajHospitalizacija_Load(object sender, EventArgs e)
+        {
+            await dijagnozeUputnaAsync();
+            await dijagnozeOsnovnaAsync();
+            await dijagnozePratecaAsync();
+            await operacijeAsync();
         }
 
     }

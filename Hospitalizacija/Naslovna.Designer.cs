@@ -47,6 +47,9 @@
             this.врстаОтпустаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.уносToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.извештајToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.помоћToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip1.SuspendLayout();
@@ -82,7 +85,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.програмToolStripMenuItem,
             this.прегледПодатакаToolStripMenuItem,
-            this.извештајToolStripMenuItem});
+            this.извештајToolStripMenuItem,
+            this.помоћToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1087, 24);
@@ -196,6 +200,27 @@
             this.извештајToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.извештајToolStripMenuItem.Text = "Извештај";
             // 
+            // помоћToolStripMenuItem
+            // 
+            this.помоћToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оПрограмуToolStripMenuItem,
+            this.контактToolStripMenuItem});
+            this.помоћToolStripMenuItem.Name = "помоћToolStripMenuItem";
+            this.помоћToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.помоћToolStripMenuItem.Text = "Помоћ";
+            // 
+            // оПрограмуToolStripMenuItem
+            // 
+            this.оПрограмуToolStripMenuItem.Name = "оПрограмуToolStripMenuItem";
+            this.оПрограмуToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.оПрограмуToolStripMenuItem.Text = "О програму";
+            // 
+            // контактToolStripMenuItem
+            // 
+            this.контактToolStripMenuItem.Name = "контактToolStripMenuItem";
+            this.контактToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.контактToolStripMenuItem.Text = "Контакт";
+            // 
             // gridControl1
             // 
             this.gridControl1.Location = new System.Drawing.Point(12, 94);
@@ -215,7 +240,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.PaintStyleName = "Style3D";
+            this.gridView1.PaintStyleName = "Skin";
             // 
             // Naslovna
             // 
@@ -253,7 +278,6 @@
         private System.Windows.Forms.ToolStripMenuItem уносToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem извештајToolStripMenuItem;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ToolStripMenuItem здравственеУстановеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem одељењаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дијагнозеToolStripMenuItem;
@@ -262,5 +286,9 @@
         private System.Windows.Forms.ToolStripMenuItem општинеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem врстаОтпустаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem свиПодациToolStripMenuItem;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.ToolStripMenuItem помоћToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограмуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem контактToolStripMenuItem;
     }
 }
