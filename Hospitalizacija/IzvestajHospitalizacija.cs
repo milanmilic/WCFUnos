@@ -35,7 +35,7 @@ namespace Hospitalizacija
             cmb.AutoCompleteMode = AutoCompleteMode.Suggest;
         }
 
-        private async Task dijagnozeUputnaAsync()
+        private async Task dijagOperAsync()
         {
             DataSet ds5 = new DataSet();
             ds5 = await objWebServisa.PrikaziDijagnozeUputnaAsync();
@@ -45,10 +45,7 @@ namespace Hospitalizacija
             cmb_uputna_dijag_sifra.ValueMember = ds5.Tables[0].Columns[0].ToString();
             autocomplete(cmb_uputna_dijag_sifra, ds5);
             cmb_uputna_dijag.DisplayMember = ds5.Tables[0].Columns[1].ToString();
-        }
 
-        private async Task dijagnozeOsnovnaAsync()
-        {
             DataSet ds6 = new DataSet();
             ds6 = await objWebServisa.PrikaziDijagnozeOsnovnaAsync();
             cmb_osn_uzr_hosp.DataSource = ds6.Tables[0];
@@ -57,10 +54,7 @@ namespace Hospitalizacija
             cmb_osn_uzr_hosp_sifra.ValueMember = ds6.Tables[0].Columns[0].ToString();
             autocomplete(cmb_osn_uzr_hosp_sifra, ds6);
             cmb_osn_uzr_hosp.DisplayMember = ds6.Tables[0].Columns[1].ToString();
-        }
 
-        private async Task dijagnozePratecaAsync()
-        {
             DataSet ds7 = new DataSet();
             ds7 = await objWebServisa.PrikaziDijagnozePratecaAsync();
             cmb_prateca_dijag.DataSource = ds7.Tables[0];
@@ -69,10 +63,7 @@ namespace Hospitalizacija
             cmb_prateca_dijag_sifra.ValueMember = ds7.Tables[0].Columns[0].ToString();
             autocomplete(cmb_prateca_dijag_sifra, ds7);
             cmb_prateca_dijag.DisplayMember = ds7.Tables[0].Columns[1].ToString();
-        }
 
-        private async Task operacijeAsync()
-        {
             DataSet ds8 = new DataSet();
             ds8 = await objWebServisa.PrikaziOperacijeAsync();
             cmb_procedura.DataSource = ds8.Tables[0];
@@ -194,7 +185,7 @@ namespace Hospitalizacija
             DateTime datum_prijema = Convert.ToDateTime(dtp_datum_prijema.Value);
             DateTime datum_otpusta = Convert.ToDateTime(dtp_datum_otpusta.Value);
 
-            int br_dana_lezanja = datum_otpusta.Day - datum_prijema.Day;
+            double br_dana_lezanja = (datum_otpusta - datum_prijema).TotalDays;
 
             txt_br_dana_lezanja.Text = br_dana_lezanja.ToString();
         }
@@ -215,10 +206,7 @@ namespace Hospitalizacija
 
         private async void IzvestajHospitalizacija_Load(object sender, EventArgs e)
         {
-            await dijagnozeUputnaAsync();
-            await dijagnozeOsnovnaAsync();
-            await dijagnozePratecaAsync();
-            await operacijeAsync();
+            await dijagOperAsync();            
         }
 
     }

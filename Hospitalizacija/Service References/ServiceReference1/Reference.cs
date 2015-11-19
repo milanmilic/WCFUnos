@@ -497,6 +497,12 @@ namespace Hospitalizacija.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnosHospitalizacije", ReplyAction="http://tempuri.org/IService1/UnosHospitalizacijeResponse")]
         System.Threading.Tasks.Task<string> UnosHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SviPodaci", ReplyAction="http://tempuri.org/IService1/SviPodaciResponse")]
+        System.Data.DataSet SviPodaci();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SviPodaci", ReplyAction="http://tempuri.org/IService1/SviPodaciResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SviPodaciAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrikaziBolnice", ReplyAction="http://tempuri.org/IService1/PrikaziBolniceResponse")]
         System.Data.DataSet PrikaziBolnice();
         
@@ -615,6 +621,14 @@ namespace Hospitalizacija.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> UnosHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac) {
             return base.Channel.UnosHospitalizacijeAsync(pacijentInfo, bolRac);
+        }
+        
+        public System.Data.DataSet SviPodaci() {
+            return base.Channel.SviPodaci();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> SviPodaciAsync() {
+            return base.Channel.SviPodaciAsync();
         }
         
         public System.Data.DataSet PrikaziBolnice() {

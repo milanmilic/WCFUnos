@@ -19,7 +19,6 @@ namespace Hospitalizacija
             PrikaziDatumVreme();
             gridControl1.Hide();
 
-
         }
 
         private void PrikaziDatumVreme()
@@ -40,6 +39,8 @@ namespace Hospitalizacija
 
         private async void дијагнозеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            gridControl1.Hide();
             await dijagnozeAsync();
         }
 
@@ -53,6 +54,7 @@ namespace Hospitalizacija
 
         private async void здравственеУстановеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridControl1.Hide();
             await zdravstveneUstanoveAsync();
         }
 
@@ -66,6 +68,7 @@ namespace Hospitalizacija
 
         private async void одељењаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridControl1.Hide();
             await odeljenjaAsync();
         }
 
@@ -79,6 +82,7 @@ namespace Hospitalizacija
 
         private async void процедуреToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridControl1.Hide();
             await procedureAsync();
         }
 
@@ -92,6 +96,7 @@ namespace Hospitalizacija
 
         private async void државеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridControl1.Hide();
             await drzaveAsync();
         }
 
@@ -105,6 +110,7 @@ namespace Hospitalizacija
 
         private async void општинеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridControl1.Hide();
             await opstineAsync();
         }
 
@@ -118,6 +124,7 @@ namespace Hospitalizacija
 
         private async void врстаОтпустаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridControl1.Hide();
             await vrstaOtpustaAsync();
         }
 
@@ -125,6 +132,20 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziOtpustAsync();
+            gridControl1.DataSource = ds.Tables[0];
+            gridControl1.Show();
+        }
+
+        private async void свиПодациToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            gridControl1.Hide();
+            await sviPodaciAsync();
+        }
+
+        private async Task sviPodaciAsync()
+        {
+            DataSet ds = new DataSet();
+            ds = await objWebServisa.SviPodaciAsync();
             gridControl1.DataSource = ds.Tables[0];
             gridControl1.Show();
         }

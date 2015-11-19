@@ -14,6 +14,12 @@
   <wsdl:message name="IService1_UnosHospitalizacije_OutputMessage">
     <wsdl:part name="parameters" element="tns:UnosHospitalizacijeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SviPodaci_InputMessage">
+    <wsdl:part name="parameters" element="tns:SviPodaci" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SviPodaci_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SviPodaciResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_PrikaziBolnice_InputMessage">
     <wsdl:part name="parameters" element="tns:PrikaziBolnice" />
   </wsdl:message>
@@ -103,6 +109,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UnosHospitalizacije" message="tns:IService1_UnosHospitalizacije_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UnosHospitalizacijeResponse" message="tns:IService1_UnosHospitalizacije_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SviPodaci">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SviPodaci" message="tns:IService1_SviPodaci_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SviPodaciResponse" message="tns:IService1_SviPodaci_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PrikaziBolnice">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PrikaziBolnice" message="tns:IService1_PrikaziBolnice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrikaziBolniceResponse" message="tns:IService1_PrikaziBolnice_OutputMessage" />
@@ -164,6 +174,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="UnosHospitalizacije">
       <soap:operation soapAction="http://tempuri.org/IService1/UnosHospitalizacije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SviPodaci">
+      <soap:operation soapAction="http://tempuri.org/IService1/SviPodaci" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
