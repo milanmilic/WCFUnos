@@ -36,7 +36,6 @@
             this.програмToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.излазToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.прегледПодатакаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.свиПодациToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.уносToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.здравственеУстановеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.одељењаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,18 +44,22 @@
             this.државеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.општинеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.врстаОтпустаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.свиПодациToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.уносToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.свиПодациToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.извештајToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помоћToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.grid_sifarnici = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_svi_podaci = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sifarnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_svi_podaci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -112,19 +115,12 @@
             // прегледПодатакаToolStripMenuItem
             // 
             this.прегледПодатакаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.свиПодациToolStripMenuItem,
             this.уносToolStripMenuItem,
-            this.уносToolStripMenuItem1,
-            this.свиПодациToolStripMenuItem1});
+            this.свиПодациToolStripMenuItem,
+            this.уносToolStripMenuItem1});
             this.прегледПодатакаToolStripMenuItem.Name = "прегледПодатакаToolStripMenuItem";
             this.прегледПодатакаToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.прегледПодатакаToolStripMenuItem.Text = "Подаци";
-            // 
-            // свиПодациToolStripMenuItem
-            // 
-            this.свиПодациToolStripMenuItem.Name = "свиПодациToolStripMenuItem";
-            this.свиПодациToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.свиПодациToolStripMenuItem.Text = "Сви подаци";
             // 
             // уносToolStripMenuItem
             // 
@@ -189,19 +185,19 @@
             this.врстаОтпустаToolStripMenuItem.Text = "Врста отпуста";
             this.врстаОтпустаToolStripMenuItem.Click += new System.EventHandler(this.врстаОтпустаToolStripMenuItem_Click);
             // 
+            // свиПодациToolStripMenuItem
+            // 
+            this.свиПодациToolStripMenuItem.Name = "свиПодациToolStripMenuItem";
+            this.свиПодациToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.свиПодациToolStripMenuItem.Text = "Сви подаци";
+            this.свиПодациToolStripMenuItem.Click += new System.EventHandler(this.свиПодациToolStripMenuItem_Click);
+            // 
             // уносToolStripMenuItem1
             // 
             this.уносToolStripMenuItem1.Name = "уносToolStripMenuItem1";
             this.уносToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.уносToolStripMenuItem1.Text = "Унос";
             this.уносToolStripMenuItem1.Click += new System.EventHandler(this.уносToolStripMenuItem1_Click);
-            // 
-            // свиПодациToolStripMenuItem1
-            // 
-            this.свиПодациToolStripMenuItem1.Name = "свиПодациToolStripMenuItem1";
-            this.свиПодациToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
-            this.свиПодациToolStripMenuItem1.Text = "Сви подаци";
-            this.свиПодациToolStripMenuItem1.Click += new System.EventHandler(this.свиПодациToolStripMenuItem1_Click);
             // 
             // извештајToolStripMenuItem
             // 
@@ -230,32 +226,53 @@
             this.контактToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.контактToolStripMenuItem.Text = "Контакт";
             // 
-            // gridControl1
+            // grid_sifarnici
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 24);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1087, 567);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grid_sifarnici.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_sifarnici.Location = new System.Drawing.Point(0, 24);
+            this.grid_sifarnici.MainView = this.gridView1;
+            this.grid_sifarnici.Name = "grid_sifarnici";
+            this.grid_sifarnici.Size = new System.Drawing.Size(1087, 567);
+            this.grid_sifarnici.TabIndex = 2;
+            this.grid_sifarnici.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
             this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.grid_sifarnici;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.PaintStyleName = "Web";
+            // 
+            // grid_svi_podaci
+            // 
+            this.grid_svi_podaci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_svi_podaci.Location = new System.Drawing.Point(0, 24);
+            this.grid_svi_podaci.MainView = this.gridView2;
+            this.grid_svi_podaci.Name = "grid_svi_podaci";
+            this.grid_svi_podaci.Size = new System.Drawing.Size(1087, 567);
+            this.grid_svi_podaci.TabIndex = 3;
+            this.grid_svi_podaci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.gridView2.GridControl = this.grid_svi_podaci;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.PaintStyleName = "Web";
             // 
             // Naslovna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 613);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.grid_svi_podaci);
+            this.Controls.Add(this.grid_sifarnici);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -269,8 +286,10 @@
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sifarnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_svi_podaci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,8 +318,9 @@
         private System.Windows.Forms.ToolStripMenuItem помоћToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограмуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контактToolStripMenuItem;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl grid_sifarnici;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.ToolStripMenuItem свиПодациToolStripMenuItem1;
+        private DevExpress.XtraGrid.GridControl grid_svi_podaci;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

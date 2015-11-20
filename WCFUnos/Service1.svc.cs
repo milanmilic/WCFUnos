@@ -164,7 +164,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_bolnica WHERE id < 91 ORDER BY naziv ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procBolnice";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -210,7 +212,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_odeljenje ORDER BY naziv ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procOdeljenja";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -233,7 +237,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procDijagnoze";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -256,7 +262,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procDijagnoze";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -279,7 +287,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procDijagnoze";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -302,7 +312,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procDijagnoze";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -325,7 +337,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 * FROM i_dijagnoza ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procDijagnoze";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -348,7 +362,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 500 id, naziv FROM i_operacije ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procOperacije";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -371,7 +387,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_drzava", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procDrzave";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -394,7 +412,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_opstina", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procOpstine";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -417,7 +437,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_vrsta_otpusta", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procVrstaOtpusta";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -440,7 +462,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT id, naziv FROM i_pol", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procPol";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
@@ -463,7 +487,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT id, naziv FROM i_dane", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procOsiguranje";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);

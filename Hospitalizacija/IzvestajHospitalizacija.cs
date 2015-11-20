@@ -142,35 +142,38 @@ namespace Hospitalizacija
 
             try
             {
-                objPacijent.jmbg = txt_jmbg.Text;
-                objPacijent.prezime_ime = txt_prezime_ime_pacijenta.Text;
-                objPacijent.id_pol = Convert.ToInt32(cmb_pol.SelectedValue);
-                objPacijent.datum_rodjenja = Convert.ToDateTime(dtp_datum_rodjenja.Value);
-                objPacijent.id_drzavljanstvo = Convert.ToInt32(cmb_drzavljanstvo.SelectedValue);
-                objPacijent.starost = Convert.ToInt32(txt_starost.Text);
-                objPacijent.adresa_prebivalista = txt_adresa_preb.Text;
-                objPacijent.id_opstina = Convert.ToString(cmb_opstina.SelectedValue);
-                objPacijent.id_osiguranje = Convert.ToInt32(cmb_osiguranje.SelectedValue);
-                objPacijent.lbo = txt_lbo.Text;
+                if (validacija())
+                {
+                    objPacijent.jmbg = txt_jmbg.Text;
+                    objPacijent.prezime_ime = txt_prezime_ime_pacijenta.Text;
+                    objPacijent.id_pol = Convert.ToInt32(cmb_pol.SelectedValue);
+                    objPacijent.datum_rodjenja = Convert.ToDateTime(dtp_datum_rodjenja.Value);
+                    objPacijent.id_drzavljanstvo = Convert.ToInt32(cmb_drzavljanstvo.SelectedValue);
+                    objPacijent.starost = Convert.ToInt32(txt_starost.Text);
+                    objPacijent.adresa_prebivalista = txt_adresa_preb.Text;
+                    objPacijent.id_opstina = Convert.ToString(cmb_opstina.SelectedValue);
+                    objPacijent.id_osiguranje = Convert.ToInt32(cmb_osiguranje.SelectedValue);
+                    objPacijent.lbo = txt_lbo.Text;
 
-                objBolRac.id_bolnica = Convert.ToInt32(cmb_zdr_ustanova.SelectedValue);
-                objBolRac.id_odeljenje = Convert.ToInt32(cmb_odeljenje_prijem.SelectedValue);
-                objBolRac.br_istorije_bolesti = txt_br_istorije_bol.Text;
-                objBolRac.datum_prijema = Convert.ToDateTime(dtp_datum_prijema.Value);
-                objBolRac.id_uputna_dijagnoza = cmb_uputna_dijag_sifra.Text;
-                objBolRac.id_osnovni_uzrok_hospitalizacije = cmb_osn_uzr_hosp_sifra.Text;
-                objBolRac.id_dijagnoza1 = cmb_prateca_dijag_sifra.Text;
-                objBolRac.datum_ispisa = Convert.ToDateTime(dtp_datum_otpusta.Value);
-                objBolRac.br_dana_lezanja = Convert.ToInt32(txt_br_dana_lezanja.Text);
-                objBolRac.id_operacije1 = cmb_procedura_sifra.Text;
-                objBolRac.id_odeljenje_otpust = Convert.ToInt32(cmb_odeljenje_otpust.SelectedValue);
-                objBolRac.id_vrsta_otpusta = Convert.ToInt32(cmb_vrsta_otpusta.SelectedValue);
-                objBolRac.id_osnovni_uzrok_smrti = cmb_osn_uzrok_smrti_sifra.Text;
+                    objBolRac.id_bolnica = Convert.ToInt32(cmb_zdr_ustanova.SelectedValue);
+                    objBolRac.id_odeljenje = Convert.ToInt32(cmb_odeljenje_prijem.SelectedValue);
+                    objBolRac.br_istorije_bolesti = txt_br_istorije_bol.Text;
+                    objBolRac.datum_prijema = Convert.ToDateTime(dtp_datum_prijema.Value);
+                    objBolRac.id_uputna_dijagnoza = cmb_uputna_dijag_sifra.Text;
+                    objBolRac.id_osnovni_uzrok_hospitalizacije = cmb_osn_uzr_hosp_sifra.Text;
+                    objBolRac.id_dijagnoza1 = cmb_prateca_dijag_sifra.Text;
+                    objBolRac.datum_ispisa = Convert.ToDateTime(dtp_datum_otpusta.Value);
+                    objBolRac.br_dana_lezanja = Convert.ToInt32(txt_br_dana_lezanja.Text);
+                    objBolRac.id_operacije1 = cmb_procedura_sifra.Text;
+                    objBolRac.id_odeljenje_otpust = Convert.ToInt32(cmb_odeljenje_otpust.SelectedValue);
+                    objBolRac.id_vrsta_otpusta = Convert.ToInt32(cmb_vrsta_otpusta.SelectedValue);
+                    objBolRac.id_osnovni_uzrok_smrti = cmb_osn_uzrok_smrti_sifra.Text;
 
-                string status = objWebServisa.UnosHospitalizacije(objPacijent, objBolRac);
+                    string status = objWebServisa.UnosHospitalizacije(objPacijent, objBolRac);
 
-                lbl_status.Text = status;
-                lbl_status.ForeColor = Color.Green;
+                    lbl_status.Text = status;
+                    lbl_status.ForeColor = Color.Green;
+                }
             }
             catch (Exception ex)
             {
@@ -180,12 +183,85 @@ namespace Hospitalizacija
             
         }
 
+        private bool validacija()
+        {
+            if (txt_jmbg.Text == string.Empty)
+            {
+                lbl_status.Text = "Морате унети матични број.";
+                return false;
+            }
+            else if (txt_prezime_ime_pacijenta.Text == string.Empty)
+            {
+                lbl_status.Text = "Морате унети презиме и име пацијента.";
+                return false;
+            }
+            else if(cmb_pol.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети пол.";
+                return false;
+            }
+            else if (cmb_drzavljanstvo.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети држављанство.";
+                return false;
+            }
+            else if (txt_adresa_preb.Text == string.Empty)
+            {
+                lbl_status.Text = "Морате унети адресу пребивалишта.";
+                return false;
+            }
+            else if (cmb_opstina.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети општину пребивалишта.";
+                return false;
+            }
+            else if (cmb_osiguranje.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети врсту осигурања.";
+                return false;
+            }
+            else if (cmb_zdr_ustanova.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети здравствену установу.";
+                return false;
+            }
+            else if (cmb_odeljenje_prijem.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети одељење на пријему.";
+                return false;
+            }
+            else if (txt_br_istorije_bol.Text == string.Empty)
+            {
+                lbl_status.Text = "Мотате унети број историје болести.";
+                return false;
+            }
+            else if (cmb_osn_uzr_hosp_sifra.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети основни узрок хоспитализације.";
+                return false;
+            }
+            else if (cmb_odeljenje_otpust.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети одељење са кога је извшен отпуст.";
+                return false;
+            }
+            else if (cmb_vrsta_otpusta.SelectedIndex == -1)
+            {
+                lbl_status.Text = "Морате унети врсту отпуста";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void dtp_datum_otpusta_Leave(object sender, EventArgs e)
         {
             DateTime datum_prijema = Convert.ToDateTime(dtp_datum_prijema.Value);
             DateTime datum_otpusta = Convert.ToDateTime(dtp_datum_otpusta.Value);
 
-            double br_dana_lezanja = (datum_otpusta - datum_prijema).TotalDays;
+            int br_dana_lezanja = Convert.ToInt32((datum_otpusta - datum_prijema).TotalDays);
 
             txt_br_dana_lezanja.Text = br_dana_lezanja.ToString();
         }
