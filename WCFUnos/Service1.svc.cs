@@ -141,7 +141,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM pacijent ORDER BY id ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procSviPodaci";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);

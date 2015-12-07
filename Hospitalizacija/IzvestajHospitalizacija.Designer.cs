@@ -426,9 +426,9 @@
             // cmb_procedura_sifra
             // 
             this.cmb_procedura_sifra.FormattingEnabled = true;
-            this.cmb_procedura_sifra.Location = new System.Drawing.Point(183, 117);
+            this.cmb_procedura_sifra.Location = new System.Drawing.Point(168, 117);
             this.cmb_procedura_sifra.Name = "cmb_procedura_sifra";
-            this.cmb_procedura_sifra.Size = new System.Drawing.Size(92, 21);
+            this.cmb_procedura_sifra.Size = new System.Drawing.Size(107, 21);
             this.cmb_procedura_sifra.TabIndex = 17;
             // 
             // cmb_prateca_dijag_sifra
