@@ -17,8 +17,6 @@ namespace Hospitalizacija
         {
             InitializeComponent();
             PrikaziDatumVreme();
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
 
         }
 
@@ -40,9 +38,6 @@ namespace Hospitalizacija
 
         private async void дијагнозеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await dijagnozeAsync();
         }
 
@@ -50,14 +45,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziDijagnozeAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void здравственеУстановеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await zdravstveneUstanoveAsync();
         }
 
@@ -65,14 +56,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziBolniceAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void одељењаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await odeljenjaAsync();
         }
 
@@ -80,14 +67,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziOdeljenjaPrijemAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void процедуреToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await procedureAsync();
         }
 
@@ -95,14 +78,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziOperacijeAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void државеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await drzaveAsync();
         }
 
@@ -110,14 +89,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziDrzaveAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void општинеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await opstineAsync();
         }
 
@@ -125,14 +100,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziOpstineAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void врстаОтпустаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await vrstaOtpustaAsync();
         }
 
@@ -140,14 +111,10 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.PrikaziOtpustAsync();
-            grid_sifarnici.DataSource = ds.Tables[0];
-            grid_sifarnici.Show();
         }
 
         private async void свиПодациToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid_sifarnici.Hide();
-            grid_svi_podaci.Hide();
             await sviPodaciAsync();
         }
 
@@ -155,8 +122,6 @@ namespace Hospitalizacija
         {
             DataSet ds = new DataSet();
             ds = await objWebServisa.SviPodaciAsync();
-            grid_svi_podaci.DataSource = ds.Tables[0];
-            grid_svi_podaci.Show();
         }
     }
 }
