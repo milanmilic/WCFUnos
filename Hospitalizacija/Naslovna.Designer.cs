@@ -50,8 +50,16 @@
             this.помоћToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grid_sifarnici = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_svi_podaci = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sifarnici)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_svi_podaci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -218,24 +226,63 @@
             this.контактToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.контактToolStripMenuItem.Text = "Контакт";
             // 
+            // grid_sifarnici
+            // 
+            this.grid_sifarnici.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_sifarnici.Location = new System.Drawing.Point(0, 24);
+            this.grid_sifarnici.MainView = this.gridView1;
+            this.grid_sifarnici.Name = "grid_sifarnici";
+            this.grid_sifarnici.Size = new System.Drawing.Size(1087, 567);
+            this.grid_sifarnici.TabIndex = 2;
+            this.grid_sifarnici.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grid_sifarnici;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            // 
+            // grid_svi_podaci
+            // 
+            this.grid_svi_podaci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_svi_podaci.Location = new System.Drawing.Point(0, 24);
+            this.grid_svi_podaci.MainView = this.gridView2;
+            this.grid_svi_podaci.Name = "grid_svi_podaci";
+            this.grid_svi_podaci.Size = new System.Drawing.Size(1087, 567);
+            this.grid_svi_podaci.TabIndex = 3;
+            this.grid_svi_podaci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.grid_svi_podaci;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
+            // 
             // Naslovna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 613);
+            this.Controls.Add(this.grid_svi_podaci);
+            this.Controls.Add(this.grid_sifarnici);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Naslovna";
             this.Text = "Извештај о хоспитализацији";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sifarnici)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_svi_podaci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +311,9 @@
         private System.Windows.Forms.ToolStripMenuItem помоћToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограмуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контактToolStripMenuItem;
+        private DevExpress.XtraGrid.GridControl grid_sifarnici;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grid_svi_podaci;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
