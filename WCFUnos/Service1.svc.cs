@@ -191,7 +191,9 @@ namespace WCFUnos
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM i_odeljenje ORDER BY naziv ASC", con);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procOdeljenja";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     sda.Fill(ds);
