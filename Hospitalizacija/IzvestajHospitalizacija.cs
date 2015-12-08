@@ -16,10 +16,32 @@ namespace Hospitalizacija
         //ovo je objekat web servisa preko koga se kacimo do baze i metoda
         ServiceReference1.Service1Client objWebServisa = new ServiceReference1.Service1Client();
 
+        public int id_bolRac;
+        public int id_pacijent;
+
         public IzvestajHospitalizacija()
         {
             InitializeComponent();
+            dijagOper();
             PrikaziPodatke();
+        }
+
+        private void IzvestajHospitalizacija_Load(object sender, EventArgs e)
+        {
+            ProveraForme();}
+
+        private void ProveraForme()
+        {
+            if (id_bolRac == 0)
+            {
+                btn_izmena.Hide();
+                btn_unos_izvestaja.Show();
+            }
+            else
+            {
+                btn_izmena.Show();
+                btn_unos_izvestaja.Hide();
+            }
         }
 
         private void autocomplete(ComboBox cmb, DataSet ds)
@@ -35,10 +57,10 @@ namespace Hospitalizacija
             cmb.AutoCompleteMode = AutoCompleteMode.Suggest;
         }
 
-        private async Task dijagOperAsync()
+        private void dijagOper()
         {
             DataSet ds5 = new DataSet();
-            ds5 = await objWebServisa.PrikaziDijagnozeUputnaAsync();
+            ds5 = objWebServisa.PrikaziDijagnozeUputna();
             cmb_uputna_dijag.DataSource = ds5.Tables[0];
             cmb_uputna_dijag_sifra.DataSource = ds5.Tables[0];
             cmb_uputna_dijag_sifra.DisplayMember = ds5.Tables[0].Columns[0].ToString();
@@ -47,7 +69,7 @@ namespace Hospitalizacija
             cmb_uputna_dijag.DisplayMember = ds5.Tables[0].Columns[1].ToString();
 
             DataSet ds6 = new DataSet();
-            ds6 = await objWebServisa.PrikaziDijagnozeOsnovnaAsync();
+            ds6 = objWebServisa.PrikaziDijagnozeOsnovna();
             cmb_osn_uzr_hosp.DataSource = ds6.Tables[0];
             cmb_osn_uzr_hosp_sifra.DataSource = ds6.Tables[0];
             cmb_osn_uzr_hosp_sifra.DisplayMember = ds6.Tables[0].Columns[0].ToString();
@@ -56,7 +78,7 @@ namespace Hospitalizacija
             cmb_osn_uzr_hosp.DisplayMember = ds6.Tables[0].Columns[1].ToString();
 
             DataSet ds7 = new DataSet();
-            ds7 = await objWebServisa.PrikaziDijagnozePratecaAsync();
+            ds7 = objWebServisa.PrikaziDijagnozePrateca();
             cmb_prateca_dijag.DataSource = ds7.Tables[0];
             cmb_prateca_dijag_sifra.DataSource = ds7.Tables[0];
             cmb_prateca_dijag_sifra.DisplayMember = ds7.Tables[0].Columns[0].ToString();
@@ -65,7 +87,7 @@ namespace Hospitalizacija
             cmb_prateca_dijag.DisplayMember = ds7.Tables[0].Columns[1].ToString();
 
             DataSet ds8 = new DataSet();
-            ds8 = await objWebServisa.PrikaziOperacijeAsync();
+            ds8 = objWebServisa.PrikaziOperacije();
             cmb_procedura.DataSource = ds8.Tables[0];
             cmb_procedura_sifra.DataSource = ds8.Tables[0];
             cmb_procedura_sifra.DisplayMember = ds8.Tables[0].Columns[0].ToString();
@@ -183,6 +205,55 @@ namespace Hospitalizacija
             
         }
 
+
+        private void btn_izmena_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.Pacijent objPacijent = new ServiceReference1.Pacijent();
+            ServiceReference1.Bolnickiracun objBolRac = new ServiceReference1.Bolnickiracun();
+
+            try
+            {
+                if (validacija())
+                {
+                    objPacijent.id = id_pacijent;
+                    objPacijent.jmbg = txt_jmbg.Text;
+                    objPacijent.prezime_ime = txt_prezime_ime_pacijenta.Text;
+                    objPacijent.id_pol = Convert.ToInt32(cmb_pol.SelectedValue);
+                    objPacijent.datum_rodjenja = Convert.ToDateTime(dtp_datum_rodjenja.Value);
+                    objPacijent.id_drzavljanstvo = Convert.ToInt32(cmb_drzavljanstvo.SelectedValue);
+                    objPacijent.starost = Convert.ToInt32(txt_starost.Text);
+                    objPacijent.adresa_prebivalista = txt_adresa_preb.Text;
+                    objPacijent.id_opstina = Convert.ToString(cmb_opstina.SelectedValue);
+                    objPacijent.id_osiguranje = Convert.ToInt32(cmb_osiguranje.SelectedValue);
+                    objPacijent.lbo = txt_lbo.Text;
+
+                    objBolRac.id = id_bolRac;
+                    objBolRac.id_bolnica = Convert.ToInt32(cmb_zdr_ustanova.SelectedValue);
+                    objBolRac.id_odeljenje = Convert.ToInt32(cmb_odeljenje_prijem.SelectedValue);
+                    objBolRac.br_istorije_bolesti = txt_br_istorije_bol.Text;
+                    objBolRac.datum_prijema = Convert.ToDateTime(dtp_datum_prijema.Value);
+                    objBolRac.id_uputna_dijagnoza = cmb_uputna_dijag_sifra.Text;
+                    objBolRac.id_osnovni_uzrok_hospitalizacije = cmb_osn_uzr_hosp_sifra.Text;
+                    objBolRac.id_dijagnoza1 = cmb_prateca_dijag_sifra.Text;
+                    objBolRac.datum_ispisa = Convert.ToDateTime(dtp_datum_otpusta.Value);
+                    objBolRac.br_dana_lezanja = Convert.ToInt32(txt_br_dana_lezanja.Text);
+                    objBolRac.id_operacije1 = cmb_procedura_sifra.Text;
+                    objBolRac.id_odeljenje_otpust = Convert.ToInt32(cmb_odeljenje_otpust.SelectedValue);
+                    objBolRac.id_vrsta_otpusta = Convert.ToInt32(cmb_vrsta_otpusta.SelectedValue);
+                    objBolRac.id_osnovni_uzrok_smrti = cmb_osn_uzrok_smrti_sifra.Text;
+
+                    string status = objWebServisa.IzmenaHospitalizacije(objPacijent, objBolRac);
+
+                    lbl_status.Text = status;
+                    lbl_status.ForeColor = Color.Green;
+                }
+            }
+            catch (Exception ex)
+            {
+                lbl_status.Text = ex.Message;
+                lbl_status.ForeColor = Color.Red;}
+        }
+
         private bool validacija()
         {
             if (txt_jmbg.Text == string.Empty)
@@ -279,11 +350,5 @@ namespace Hospitalizacija
         {
             this.Close();
         }
-
-        private async void IzvestajHospitalizacija_Load(object sender, EventArgs e)
-        {
-            await dijagOperAsync();            
-        }
-
     }
 }

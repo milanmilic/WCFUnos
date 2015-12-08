@@ -16,6 +16,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="IzmenaHospitalizacije">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFUnos" minOccurs="0" name="pacijentInfo" nillable="true" type="q3:Pacijent" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFUnos" minOccurs="0" name="bolRac" nillable="true" type="q4:Bolnickiracun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmenaHospitalizacijeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmenaHospitalizacijeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SviPodaci">
     <xs:complexType>
       <xs:sequence />

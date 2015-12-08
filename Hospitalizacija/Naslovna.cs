@@ -25,7 +25,7 @@ namespace Hospitalizacija
         {
             toolStripStatusLabel1.Text = DateTime.Now.ToString();
         }
-
+#region Dugmici za meni
         private void излазToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -164,5 +164,48 @@ namespace Hospitalizacija
             grid_svi_podaci.Show();
             gridView2.BestFitColumns(true);
         }
+#endregion
+#region Prenos podataka iz grida u formu
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            IzvestajHospitalizacija ih = new IzvestajHospitalizacija();
+
+            foreach (int i in gridView2.GetSelectedRows())
+            {
+                DataRow red = gridView2.GetDataRow(i);
+                ih.id_bolRac = Convert.ToInt32(red[0]);
+                ih.id_pacijent = Convert.ToInt32(red[1]);
+                ih.txt_jmbg.Text = red[2].ToString();
+                ih.txt_prezime_ime_pacijenta.Text = red[3].ToString();
+                ih.cmb_pol.Text = red[4].ToString();
+                ih.dtp_datum_rodjenja.Text = red[5].ToString();
+                ih.cmb_drzavljanstvo.Text = red[6].ToString();
+                ih.txt_starost.Text = red[7].ToString();
+                ih.txt_adresa_preb.Text = red[8].ToString();
+                ih.cmb_opstina.Text = red[9].ToString();
+                ih.cmb_osiguranje.Text = red[10].ToString();
+                ih.txt_lbo.Text = red[11].ToString();
+                ih.cmb_zdr_ustanova.Text = red[12].ToString();
+                ih.cmb_odeljenje_prijem.Text = red[13].ToString();
+                ih.txt_br_istorije_bol.Text = red[14].ToString();
+                ih.dtp_datum_prijema.Text = red[15].ToString();
+                ih.cmb_uputna_dijag_sifra.Text = red[16].ToString();
+                ih.cmb_uputna_dijag.Text = red[17].ToString();
+                ih.cmb_osn_uzr_hosp_sifra.Text = red[18].ToString();
+                ih.cmb_osn_uzr_hosp.Text = red[19].ToString();
+                ih.cmb_prateca_dijag_sifra.Text = red[20].ToString();
+                ih.cmb_prateca_dijag.Text = red[21].ToString();
+                ih.dtp_datum_otpusta.Text = red[22].ToString();
+                ih.txt_br_dana_lezanja.Text = red[23].ToString();
+                ih.cmb_procedura_sifra.Text = red[24].ToString();
+                ih.cmb_procedura.Text = red[25].ToString();
+                ih.cmb_odeljenje_otpust.Text = red[26].ToString();
+                ih.cmb_vrsta_otpusta.Text = red[27].ToString();
+                ih.cmb_osn_uzrok_smrti_sifra.Text = red[28].ToString();
+                ih.cmb_osn_uzrok_smrti.Text = red[29].ToString();
+            }
+            ih.ShowDialog();
+        }
+#endregion
     }
 }

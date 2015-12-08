@@ -17,6 +17,12 @@ namespace WCFUnos
         string UnosHospitalizacije(Pacijent pacijentInfo, Bolnickiracun bolRac);
 
         [OperationContract]
+        string IzmenaHospitalizacije(Pacijent pacijentInfo, Bolnickiracun bolRac);
+
+        [OperationContract]
+        bool BrisanjeHospitalizacije(Bolnickiracun bolRac);
+
+        [OperationContract]
         DataSet SviPodaci();
 
         [OperationContract]

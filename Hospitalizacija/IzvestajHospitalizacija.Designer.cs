@@ -88,6 +88,7 @@
             this.btn_unos_izvestaja = new System.Windows.Forms.Button();
             this.lbl_status = new System.Windows.Forms.Label();
             this.btn_zatvori = new System.Windows.Forms.Button();
+            this.btn_izmena = new System.Windows.Forms.Button();
             this.gb_podaci_o_bolnici.SuspendLayout();
             this.gb_podaci_o_pacijentu.SuspendLayout();
             this.gb_dijagnoze_procedure.SuspendLayout();
@@ -670,12 +671,24 @@
             this.btn_zatvori.UseVisualStyleBackColor = true;
             this.btn_zatvori.Click += new System.EventHandler(this.btn_zatvori_Click);
             // 
+            // btn_izmena
+            // 
+            this.btn_izmena.Location = new System.Drawing.Point(13, 839);
+            this.btn_izmena.Name = "btn_izmena";
+            this.btn_izmena.Size = new System.Drawing.Size(116, 23);
+            this.btn_izmena.TabIndex = 24;
+            this.btn_izmena.Text = "Измена извештаја";
+            this.btn_izmena.UseVisualStyleBackColor = true;
+            this.btn_izmena.Click += new System.EventHandler(this.btn_izmena_Click);
+            // 
             // IzvestajHospitalizacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(781, 879);
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_izmena);
             this.Controls.Add(this.btn_zatvori);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.btn_unos_izvestaja);
@@ -686,6 +699,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IzvestajHospitalizacija";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izveštaj o hospitalizaciji";
             this.Load += new System.EventHandler(this.IzvestajHospitalizacija_Load);
             this.gb_podaci_o_bolnici.ResumeLayout(false);
@@ -708,23 +722,23 @@
         private System.Windows.Forms.GroupBox gb_dijagnoze_procedure;
         private System.Windows.Forms.GroupBox gb_zakljucni_podaci;
         private System.Windows.Forms.Button btn_unos_izvestaja;
-        private System.Windows.Forms.DateTimePicker dtp_datum_prijema;
-        private System.Windows.Forms.TextBox txt_br_istorije_bol;
-        private System.Windows.Forms.ComboBox cmb_odeljenje_prijem;
-        private System.Windows.Forms.ComboBox cmb_zdr_ustanova;
+        public System.Windows.Forms.DateTimePicker dtp_datum_prijema;
+        public System.Windows.Forms.TextBox txt_br_istorije_bol;
+        public System.Windows.Forms.ComboBox cmb_odeljenje_prijem;
+        public System.Windows.Forms.ComboBox cmb_zdr_ustanova;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmb_osiguranje;
-        private System.Windows.Forms.ComboBox cmb_opstina;
-        private System.Windows.Forms.ComboBox cmb_drzavljanstvo;
-        private System.Windows.Forms.TextBox txt_jmbg;
-        private System.Windows.Forms.TextBox txt_lbo;
-        private System.Windows.Forms.ComboBox cmb_pol;
-        private System.Windows.Forms.TextBox txt_adresa_preb;
-        private System.Windows.Forms.DateTimePicker dtp_datum_rodjenja;
-        private System.Windows.Forms.TextBox txt_prezime_ime_pacijenta;
+        public System.Windows.Forms.ComboBox cmb_osiguranje;
+        public System.Windows.Forms.ComboBox cmb_opstina;
+        public System.Windows.Forms.ComboBox cmb_drzavljanstvo;
+        public System.Windows.Forms.TextBox txt_jmbg;
+        public System.Windows.Forms.TextBox txt_lbo;
+        public System.Windows.Forms.ComboBox cmb_pol;
+        public System.Windows.Forms.TextBox txt_adresa_preb;
+        public System.Windows.Forms.DateTimePicker dtp_datum_rodjenja;
+        public System.Windows.Forms.TextBox txt_prezime_ime_pacijenta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -734,32 +748,33 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmb_procedura;
-        private System.Windows.Forms.ComboBox cmb_prateca_dijag;
-        private System.Windows.Forms.ComboBox cmb_osn_uzr_hosp;
+        public System.Windows.Forms.ComboBox cmb_procedura;
+        public System.Windows.Forms.ComboBox cmb_prateca_dijag;
+        public System.Windows.Forms.ComboBox cmb_osn_uzr_hosp;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cmb_osn_uzrok_smrti;
-        private System.Windows.Forms.ComboBox cmb_vrsta_otpusta;
-        private System.Windows.Forms.ComboBox cmb_odeljenje_otpust;
-        private System.Windows.Forms.DateTimePicker dtp_datum_otpusta;
+        public System.Windows.Forms.ComboBox cmb_osn_uzrok_smrti;
+        public System.Windows.Forms.ComboBox cmb_vrsta_otpusta;
+        public System.Windows.Forms.ComboBox cmb_odeljenje_otpust;
+        public System.Windows.Forms.DateTimePicker dtp_datum_otpusta;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox cmb_uputna_dijag_sifra;
-        private System.Windows.Forms.ComboBox cmb_procedura_sifra;
-        private System.Windows.Forms.ComboBox cmb_prateca_dijag_sifra;
-        private System.Windows.Forms.ComboBox cmb_osn_uzr_hosp_sifra;
-        private System.Windows.Forms.ComboBox cmb_osn_uzrok_smrti_sifra;
-        private System.Windows.Forms.ComboBox cmb_uputna_dijag;
+        public System.Windows.Forms.ComboBox cmb_uputna_dijag_sifra;
+        public System.Windows.Forms.ComboBox cmb_procedura_sifra;
+        public System.Windows.Forms.ComboBox cmb_prateca_dijag_sifra;
+        public System.Windows.Forms.ComboBox cmb_osn_uzr_hosp_sifra;
+        public System.Windows.Forms.ComboBox cmb_osn_uzrok_smrti_sifra;
+        public System.Windows.Forms.ComboBox cmb_uputna_dijag;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txt_starost;
-        private System.Windows.Forms.TextBox txt_br_dana_lezanja;
+        public System.Windows.Forms.TextBox txt_starost;
+        public System.Windows.Forms.TextBox txt_br_dana_lezanja;
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.Button btn_zatvori;
+        private System.Windows.Forms.Button btn_izmena;
     }
 }

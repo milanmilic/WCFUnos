@@ -497,6 +497,12 @@ namespace Hospitalizacija.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnosHospitalizacije", ReplyAction="http://tempuri.org/IService1/UnosHospitalizacijeResponse")]
         System.Threading.Tasks.Task<string> UnosHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzmenaHospitalizacije", ReplyAction="http://tempuri.org/IService1/IzmenaHospitalizacijeResponse")]
+        string IzmenaHospitalizacije(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IzmenaHospitalizacije", ReplyAction="http://tempuri.org/IService1/IzmenaHospitalizacijeResponse")]
+        System.Threading.Tasks.Task<string> IzmenaHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SviPodaci", ReplyAction="http://tempuri.org/IService1/SviPodaciResponse")]
         System.Data.DataSet SviPodaci();
         
@@ -621,6 +627,14 @@ namespace Hospitalizacija.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> UnosHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac) {
             return base.Channel.UnosHospitalizacijeAsync(pacijentInfo, bolRac);
+        }
+        
+        public string IzmenaHospitalizacije(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac) {
+            return base.Channel.IzmenaHospitalizacije(pacijentInfo, bolRac);
+        }
+        
+        public System.Threading.Tasks.Task<string> IzmenaHospitalizacijeAsync(Hospitalizacija.ServiceReference1.Pacijent pacijentInfo, Hospitalizacija.ServiceReference1.Bolnickiracun bolRac) {
+            return base.Channel.IzmenaHospitalizacijeAsync(pacijentInfo, bolRac);
         }
         
         public System.Data.DataSet SviPodaci() {

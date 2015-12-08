@@ -260,6 +260,7 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsFind.AlwaysVisible = true;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
             // Naslovna
             // 
