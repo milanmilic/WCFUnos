@@ -31,6 +31,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BrisanjeHospitalizacije">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BrisanjeHospitalizacijeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BrisanjeHospitalizacijeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SviPodaci">
     <xs:complexType>
       <xs:sequence />

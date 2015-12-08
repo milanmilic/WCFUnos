@@ -16,9 +16,22 @@ namespace Hospitalizacija
         public Naslovna()
         {
             InitializeComponent();
+            dugme_brisanje();
             PrikaziDatumVreme();
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
+        }
+
+        private void dugme_brisanje()
+        {
+            if (gridView2.SelectedRowsCount == 1)
+            {
+                btn_brisanje.Show();
+            }
+            else
+            {
+                btn_brisanje.Hide();
+            }
         }
 
         private void PrikaziDatumVreme()
@@ -207,5 +220,47 @@ namespace Hospitalizacija
             ih.ShowDialog();
         }
 #endregion
+
+        private void btn_brisanje_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            string jmbg = "";
+            string prezime_ime = "";
+            foreach (int i in gridView2.GetSelectedRows())
+            {
+                DataRow selektovaniRed = gridView2.GetDataRow(i);
+                id = Convert.ToInt32(selektovaniRed[0]);
+                jmbg = selektovaniRed[2].ToString();
+                prezime_ime = selektovaniRed[3].ToString();
+            }
+
+            try
+            {
+                if (objWebServisa.BrisanjeHospitalizacije(id))
+                {
+                    MessageBox.Show(
+                        "Успешно је обрисана изабрана хоспитализација са јмбг-ом: " + jmbg + ", и са именом пацијента: " +
+                        prezime_ime, "Порука");
+                }
+                else
+                {
+                    MessageBox.Show("Проблем при брисању изабране хоспитализације. Молимо Вас, покушајте касније!",
+                        "Грешка");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                grid_svi_podaci.RefreshDataSource();
+            }
+        }
+
+        private void gridView2_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            dugme_brisanje();
+        }
     }
 }

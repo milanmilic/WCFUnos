@@ -20,7 +20,7 @@ namespace WCFUnos
         string IzmenaHospitalizacije(Pacijent pacijentInfo, Bolnickiracun bolRac);
 
         [OperationContract]
-        bool BrisanjeHospitalizacije(Bolnickiracun bolRac);
+        bool BrisanjeHospitalizacije(int id);
 
         [OperationContract]
         DataSet SviPodaci();

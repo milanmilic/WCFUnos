@@ -20,6 +20,12 @@
   <wsdl:message name="IService1_IzmenaHospitalizacije_OutputMessage">
     <wsdl:part name="parameters" element="tns:IzmenaHospitalizacijeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_BrisanjeHospitalizacije_InputMessage">
+    <wsdl:part name="parameters" element="tns:BrisanjeHospitalizacije" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BrisanjeHospitalizacije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BrisanjeHospitalizacijeResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_SviPodaci_InputMessage">
     <wsdl:part name="parameters" element="tns:SviPodaci" />
   </wsdl:message>
@@ -119,6 +125,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzmenaHospitalizacije" message="tns:IService1_IzmenaHospitalizacije_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzmenaHospitalizacijeResponse" message="tns:IService1_IzmenaHospitalizacije_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="BrisanjeHospitalizacije">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BrisanjeHospitalizacije" message="tns:IService1_BrisanjeHospitalizacije_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BrisanjeHospitalizacijeResponse" message="tns:IService1_BrisanjeHospitalizacije_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SviPodaci">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SviPodaci" message="tns:IService1_SviPodaci_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SviPodaciResponse" message="tns:IService1_SviPodaci_OutputMessage" />
@@ -193,6 +203,15 @@
     </wsdl:operation>
     <wsdl:operation name="IzmenaHospitalizacije">
       <soap:operation soapAction="http://tempuri.org/IService1/IzmenaHospitalizacije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BrisanjeHospitalizacije">
+      <soap:operation soapAction="http://tempuri.org/IService1/BrisanjeHospitalizacije" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

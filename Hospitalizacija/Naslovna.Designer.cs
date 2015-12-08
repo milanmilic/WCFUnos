@@ -54,6 +54,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grid_svi_podaci = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btn_brisanje = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sifarnici)).BeginInit();
@@ -259,14 +260,28 @@
             this.gridView2.GridControl = this.grid_svi_podaci;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView2_SelectionChanged);
             this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
+            // 
+            // btn_brisanje
+            // 
+            this.btn_brisanje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_brisanje.Location = new System.Drawing.Point(898, 38);
+            this.btn_brisanje.Name = "btn_brisanje";
+            this.btn_brisanje.Size = new System.Drawing.Size(162, 23);
+            this.btn_brisanje.TabIndex = 4;
+            this.btn_brisanje.Text = "Брисање хоспитализације";
+            this.btn_brisanje.UseVisualStyleBackColor = true;
+            this.btn_brisanje.Click += new System.EventHandler(this.btn_brisanje_Click);
             // 
             // Naslovna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 613);
+            this.Controls.Add(this.btn_brisanje);
             this.Controls.Add(this.grid_svi_podaci);
             this.Controls.Add(this.grid_sifarnici);
             this.Controls.Add(this.statusStrip1);
@@ -316,5 +331,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl grid_svi_podaci;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.Button btn_brisanje;
     }
 }

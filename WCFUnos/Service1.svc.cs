@@ -81,15 +81,17 @@ namespace WCFUnos
             }
         }
 
-        public bool BrisanjeHospitalizacije(Bolnickiracun bolRac)
+        public bool BrisanjeHospitalizacije(int id)
         {
             using (SqlConnection con = new SqlConnection("Data Source=mssql1;Initial Catalog=bolnickiracun;User ID=sa;Password=Vegeta1977"))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Pacijent WHERE id = @id", con);
-                    cmd.Parameters.AddWithValue("@id", pacijentInfo.id);
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "procBrisanje";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@bID", id);
                     cmd.ExecuteNonQuery();
                     return true;
                 }
