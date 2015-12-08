@@ -221,7 +221,7 @@ namespace Hospitalizacija
         }
 #endregion
 
-        private void btn_brisanje_Click(object sender, EventArgs e)
+        private async void btn_brisanje_Click(object sender, EventArgs e)
         {
             int id = 0;
             string jmbg = "";
@@ -241,6 +241,7 @@ namespace Hospitalizacija
                     MessageBox.Show(
                         "Успешно је обрисана изабрана хоспитализација са јмбг-ом: " + jmbg + ", и са именом пацијента: " +
                         prezime_ime, "Порука");
+                    await sviPodaciAsync();
                 }
                 else
                 {
@@ -251,12 +252,7 @@ namespace Hospitalizacija
             catch (Exception ex)
             {
                 throw;
-            }
-            finally
-            {
-                grid_svi_podaci.RefreshDataSource();
-            }
-        }
+            }}
 
         private void gridView2_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {

@@ -46,7 +46,6 @@
             this.врстаОтпустаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свиПодациToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.уносToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.извештајToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помоћToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +89,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.програмToolStripMenuItem,
             this.прегледПодатакаToolStripMenuItem,
-            this.извештајToolStripMenuItem,
             this.помоћToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -200,12 +198,6 @@
             this.уносToolStripMenuItem1.Text = "Унос";
             this.уносToolStripMenuItem1.Click += new System.EventHandler(this.уносToolStripMenuItem1_Click);
             // 
-            // извештајToolStripMenuItem
-            // 
-            this.извештајToolStripMenuItem.Name = "извештајToolStripMenuItem";
-            this.извештајToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.извештајToolStripMenuItem.Text = "Извештај";
-            // 
             // помоћToolStripMenuItem
             // 
             this.помоћToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -218,13 +210,13 @@
             // оПрограмуToolStripMenuItem
             // 
             this.оПрограмуToolStripMenuItem.Name = "оПрограмуToolStripMenuItem";
-            this.оПрограмуToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.оПрограмуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.оПрограмуToolStripMenuItem.Text = "О програму";
             // 
             // контактToolStripMenuItem
             // 
             this.контактToolStripMenuItem.Name = "контактToolStripMenuItem";
-            this.контактToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.контактToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.контактToolStripMenuItem.Text = "Контакт";
             // 
             // grid_sifarnici
@@ -315,7 +307,6 @@
         private System.Windows.Forms.ToolStripMenuItem прегледПодатакаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem уносToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem уносToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem извештајToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem здравственеУстановеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem одељењаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дијагнозеToolStripMenuItem;
