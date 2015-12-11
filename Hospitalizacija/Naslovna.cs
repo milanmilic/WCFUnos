@@ -47,7 +47,14 @@ namespace Hospitalizacija
         private void уносToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             IzvestajHospitalizacija izHos = new IzvestajHospitalizacija();
-            izHos.Show();
+            try
+            {
+                izHos.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async void дијагнозеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,7 +62,14 @@ namespace Hospitalizacija
 
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await dijagnozeAsync();
+            try
+            {
+                await dijagnozeAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task dijagnozeAsync()
@@ -71,7 +85,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await zdravstveneUstanoveAsync();
+            try
+            {
+                await zdravstveneUstanoveAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task zdravstveneUstanoveAsync()
@@ -87,7 +108,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await odeljenjaAsync();
+            try
+            {
+                await odeljenjaAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task odeljenjaAsync()
@@ -103,7 +131,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await procedureAsync();
+            try
+            {
+                await procedureAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task procedureAsync()
@@ -119,7 +154,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await drzaveAsync();
+            try
+            {
+                await drzaveAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task drzaveAsync()
@@ -135,7 +177,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await opstineAsync();
+            try
+            {
+                await opstineAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task opstineAsync()
@@ -151,7 +200,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await vrstaOtpustaAsync();
+            try
+            {
+                await vrstaOtpustaAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task vrstaOtpustaAsync()
@@ -166,7 +222,14 @@ namespace Hospitalizacija
         {
             grid_sifarnici.Hide();
             grid_svi_podaci.Hide();
-            await sviPodaciAsync();
+            try
+            {
+                await sviPodaciAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Грешка при конекцији са интернетом. Молимо Вас, проверите конекцију!", "Грешка!");
+            }
         }
 
         private async Task sviPodaciAsync()
@@ -252,8 +315,7 @@ namespace Hospitalizacija
                     }
                     else
                     {
-                        MessageBox.Show("Проблем при брисању изабране хоспитализације. Молимо Вас, покушајте касније!",
-                            "Грешка");
+                        MessageBox.Show("Проблем при брисању изабране хоспитализације. Молимо Вас, покушајте касније!", "Грешка!");
                     }
                 }
             }
