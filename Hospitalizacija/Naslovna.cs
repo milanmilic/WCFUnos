@@ -249,7 +249,7 @@ namespace Hospitalizacija
                         "Грешка");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }}
