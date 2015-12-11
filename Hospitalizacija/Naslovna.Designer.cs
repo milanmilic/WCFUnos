@@ -210,13 +210,13 @@
             // оПрограмуToolStripMenuItem
             // 
             this.оПрограмуToolStripMenuItem.Name = "оПрограмуToolStripMenuItem";
-            this.оПрограмуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.оПрограмуToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.оПрограмуToolStripMenuItem.Text = "О програму";
             // 
             // контактToolStripMenuItem
             // 
             this.контактToolStripMenuItem.Name = "контактToolStripMenuItem";
-            this.контактToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.контактToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.контактToolStripMenuItem.Text = "Контакт";
             // 
             // grid_sifarnici
@@ -234,6 +234,8 @@
             // 
             this.gridView1.GridControl = this.grid_sifarnici;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             // 
             // grid_svi_podaci
@@ -251,6 +253,8 @@
             // 
             this.gridView2.GridControl = this.grid_svi_podaci;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsFind.AlwaysVisible = true;
             this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ColumnAutoWidth = false;

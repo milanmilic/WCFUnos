@@ -40,13 +40,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gb_podaci_o_pacijentu = new System.Windows.Forms.GroupBox();
+            this.txt_lbo = new System.Windows.Forms.MaskedTextBox();
+            this.txt_jmbg = new System.Windows.Forms.MaskedTextBox();
             this.txt_starost = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.cmb_osiguranje = new System.Windows.Forms.ComboBox();
             this.cmb_opstina = new System.Windows.Forms.ComboBox();
             this.cmb_drzavljanstvo = new System.Windows.Forms.ComboBox();
-            this.txt_jmbg = new System.Windows.Forms.TextBox();
-            this.txt_lbo = new System.Windows.Forms.TextBox();
             this.cmb_pol = new System.Windows.Forms.ComboBox();
             this.txt_adresa_preb = new System.Windows.Forms.TextBox();
             this.dtp_datum_rodjenja = new System.Windows.Forms.DateTimePicker();
@@ -138,6 +138,7 @@
             // 
             // cmb_odeljenje_prijem
             // 
+            this.cmb_odeljenje_prijem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_odeljenje_prijem.ForeColor = System.Drawing.Color.Red;
             this.cmb_odeljenje_prijem.FormattingEnabled = true;
             this.cmb_odeljenje_prijem.Location = new System.Drawing.Point(172, 61);
@@ -147,6 +148,7 @@
             // 
             // cmb_zdr_ustanova
             // 
+            this.cmb_zdr_ustanova.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_zdr_ustanova.ForeColor = System.Drawing.Color.Red;
             this.cmb_zdr_ustanova.FormattingEnabled = true;
             this.cmb_zdr_ustanova.Location = new System.Drawing.Point(172, 25);
@@ -192,13 +194,13 @@
             // 
             // gb_podaci_o_pacijentu
             // 
+            this.gb_podaci_o_pacijentu.Controls.Add(this.txt_lbo);
+            this.gb_podaci_o_pacijentu.Controls.Add(this.txt_jmbg);
             this.gb_podaci_o_pacijentu.Controls.Add(this.txt_starost);
             this.gb_podaci_o_pacijentu.Controls.Add(this.label24);
             this.gb_podaci_o_pacijentu.Controls.Add(this.cmb_osiguranje);
             this.gb_podaci_o_pacijentu.Controls.Add(this.cmb_opstina);
             this.gb_podaci_o_pacijentu.Controls.Add(this.cmb_drzavljanstvo);
-            this.gb_podaci_o_pacijentu.Controls.Add(this.txt_jmbg);
-            this.gb_podaci_o_pacijentu.Controls.Add(this.txt_lbo);
             this.gb_podaci_o_pacijentu.Controls.Add(this.cmb_pol);
             this.gb_podaci_o_pacijentu.Controls.Add(this.txt_adresa_preb);
             this.gb_podaci_o_pacijentu.Controls.Add(this.dtp_datum_rodjenja);
@@ -218,6 +220,22 @@
             this.gb_podaci_o_pacijentu.TabIndex = 2;
             this.gb_podaci_o_pacijentu.TabStop = false;
             this.gb_podaci_o_pacijentu.Text = "Подаци о пацијенту";
+            // 
+            // txt_lbo
+            // 
+            this.txt_lbo.Location = new System.Drawing.Point(172, 162);
+            this.txt_lbo.Mask = "00000000000";
+            this.txt_lbo.Name = "txt_lbo";
+            this.txt_lbo.Size = new System.Drawing.Size(82, 20);
+            this.txt_lbo.TabIndex = 9;
+            // 
+            // txt_jmbg
+            // 
+            this.txt_jmbg.Location = new System.Drawing.Point(564, 34);
+            this.txt_jmbg.Mask = "0000000000000";
+            this.txt_jmbg.Name = "txt_jmbg";
+            this.txt_jmbg.Size = new System.Drawing.Size(94, 20);
+            this.txt_jmbg.TabIndex = 10;
             // 
             // txt_starost
             // 
@@ -241,6 +259,7 @@
             // 
             // cmb_osiguranje
             // 
+            this.cmb_osiguranje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_osiguranje.ForeColor = System.Drawing.Color.Red;
             this.cmb_osiguranje.FormattingEnabled = true;
             this.cmb_osiguranje.Location = new System.Drawing.Point(562, 162);
@@ -250,6 +269,7 @@
             // 
             // cmb_opstina
             // 
+            this.cmb_opstina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_opstina.ForeColor = System.Drawing.Color.Red;
             this.cmb_opstina.FormattingEnabled = true;
             this.cmb_opstina.Location = new System.Drawing.Point(562, 130);
@@ -259,6 +279,7 @@
             // 
             // cmb_drzavljanstvo
             // 
+            this.cmb_drzavljanstvo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_drzavljanstvo.ForeColor = System.Drawing.Color.Red;
             this.cmb_drzavljanstvo.FormattingEnabled = true;
             this.cmb_drzavljanstvo.Location = new System.Drawing.Point(562, 98);
@@ -266,22 +287,9 @@
             this.cmb_drzavljanstvo.Size = new System.Drawing.Size(187, 21);
             this.cmb_drzavljanstvo.TabIndex = 11;
             // 
-            // txt_jmbg
-            // 
-            this.txt_jmbg.Location = new System.Drawing.Point(564, 34);
-            this.txt_jmbg.Name = "txt_jmbg";
-            this.txt_jmbg.Size = new System.Drawing.Size(120, 20);
-            this.txt_jmbg.TabIndex = 10;
-            // 
-            // txt_lbo
-            // 
-            this.txt_lbo.Location = new System.Drawing.Point(172, 162);
-            this.txt_lbo.Name = "txt_lbo";
-            this.txt_lbo.Size = new System.Drawing.Size(133, 20);
-            this.txt_lbo.TabIndex = 9;
-            // 
             // cmb_pol
             // 
+            this.cmb_pol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_pol.ForeColor = System.Drawing.Color.Red;
             this.cmb_pol.FormattingEnabled = true;
             this.cmb_pol.Location = new System.Drawing.Point(172, 130);
@@ -573,6 +581,7 @@
             // 
             // cmb_vrsta_otpusta
             // 
+            this.cmb_vrsta_otpusta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_vrsta_otpusta.ForeColor = System.Drawing.Color.Red;
             this.cmb_vrsta_otpusta.FormattingEnabled = true;
             this.cmb_vrsta_otpusta.Location = new System.Drawing.Point(123, 129);
@@ -582,6 +591,7 @@
             // 
             // cmb_odeljenje_otpust
             // 
+            this.cmb_odeljenje_otpust.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_odeljenje_otpust.ForeColor = System.Drawing.Color.Red;
             this.cmb_odeljenje_otpust.FormattingEnabled = true;
             this.cmb_odeljenje_otpust.Location = new System.Drawing.Point(123, 79);
@@ -656,9 +666,9 @@
             // 
             this.lbl_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl_status.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status.Location = new System.Drawing.Point(182, 839);
+            this.lbl_status.Location = new System.Drawing.Point(157, 839);
             this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(489, 23);
+            this.lbl_status.Size = new System.Drawing.Size(514, 23);
             this.lbl_status.TabIndex = 6;
             // 
             // btn_zatvori
@@ -733,8 +743,6 @@
         public System.Windows.Forms.ComboBox cmb_osiguranje;
         public System.Windows.Forms.ComboBox cmb_opstina;
         public System.Windows.Forms.ComboBox cmb_drzavljanstvo;
-        public System.Windows.Forms.TextBox txt_jmbg;
-        public System.Windows.Forms.TextBox txt_lbo;
         public System.Windows.Forms.ComboBox cmb_pol;
         public System.Windows.Forms.TextBox txt_adresa_preb;
         public System.Windows.Forms.DateTimePicker dtp_datum_rodjenja;
@@ -776,5 +784,7 @@
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.Button btn_zatvori;
         private System.Windows.Forms.Button btn_izmena;
+        public System.Windows.Forms.MaskedTextBox txt_jmbg;
+        public System.Windows.Forms.MaskedTextBox txt_lbo;
     }
 }

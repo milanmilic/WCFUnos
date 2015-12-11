@@ -61,7 +61,7 @@ namespace WCFUnos
 
                     if (returnInt == 1)
                     {
-                        Message = "Успешно унет извештај о хоспитализацији";
+                        Message = "Успешно унет извештај о хоспитализацији. Пацијент: " + pacijentInfo.prezime_ime + ", јмбг: " + pacijentInfo.jmbg;
                     }
                     else
                     {
@@ -154,7 +154,7 @@ namespace WCFUnos
 
                     if (returnInt == 1)
                     {
-                        Message = "Успешно измењен извештај о хоспитализацији";
+                        Message = "Успешно измењен извештај о хоспитализацији. Пацијент: " + pacijentInfo.prezime_ime + ", јмбг: " + pacijentInfo.jmbg;
                     }
                     else
                     {
