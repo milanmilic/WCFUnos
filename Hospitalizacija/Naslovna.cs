@@ -47,7 +47,7 @@ namespace Hospitalizacija
         private void уносToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             IzvestajHospitalizacija izHos = new IzvestajHospitalizacija();
-            izHos.ShowDialog();
+            izHos.Show();
         }
 
         private async void дијагнозеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,7 +217,7 @@ namespace Hospitalizacija
                 ih.cmb_osn_uzrok_smrti_sifra.Text = red[28].ToString();
                 ih.cmb_osn_uzrok_smrti.Text = red[29].ToString();
             }
-            ih.ShowDialog();
+            ih.Show();
         }
 #endregion
 
@@ -234,22 +234,30 @@ namespace Hospitalizacija
                 prezime_ime = selektovaniRed[3].ToString();
             }
 
+            DialogResult pitanjeBrisanja =
+                MessageBox.Show("Да ли сигурно желита да обришете извештај о хоспитализацији где је јмбг пацијента: "
+                                + jmbg + ", а презиме и име пацијента: " + prezime_ime + "?", "Упозорење", MessageBoxButtons.YesNo);
+
             try
             {
-                if (objWebServisa.BrisanjeHospitalizacije(id))
+                if (pitanjeBrisanja == DialogResult.Yes)
                 {
-                    MessageBox.Show(
-                        "Успешно је обрисана изабрана хоспитализација са јмбг-ом: " + jmbg + ", и са именом пацијента: " +
-                        prezime_ime, "Порука");
-                    await sviPodaciAsync();
-                }
-                else
-                {
-                    MessageBox.Show("Проблем при брисању изабране хоспитализације. Молимо Вас, покушајте касније!",
-                        "Грешка");
+                    if (objWebServisa.BrisanjeHospitalizacije(id))
+                    {
+                        MessageBox.Show(
+                            "Успешно је обрисана изабрана хоспитализација са јмбг-ом: " + jmbg +
+                            ", и са именом пацијента: " +
+                            prezime_ime, "Порука");
+                        await sviPodaciAsync();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Проблем при брисању изабране хоспитализације. Молимо Вас, покушајте касније!",
+                            "Грешка");
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }}

@@ -154,7 +154,6 @@ namespace Hospitalizacija
             cmb_osiguranje.DataSource = ds12.Tables[0];
             cmb_osiguranje.DisplayMember = ds12.Tables[0].Columns[1].ToString();
             cmb_osiguranje.ValueMember = ds12.Tables[0].Columns[0].ToString();
-            autocomplete(cmb_osiguranje, ds12);
         }
 
         private void btn_unos_izvestaja_Click(object sender, EventArgs e)
